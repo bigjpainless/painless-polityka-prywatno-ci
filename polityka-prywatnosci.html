@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Polityka prywatności — Painless</title>
+<meta name="description" content="Polityka prywatności aplikacji Painless (AI-Fizjo).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Inter:wght@400;600&family=Space+Mono&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green:#4CAF1E;
+    --green-dark:#3A8A15;
+    --ink:#1C2318;
+    --ink-soft:#4A5544;
+    --paper:#FAFBF7;
+    --card:#FFFFFF;
+    --line:#E3E9DD;
+    --mono:'Space Mono',monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+  body{
+    font-family:'Inter',system-ui,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.65;
+    font-size:16px;
+  }
+  .wrap{max-width:720px;margin:0 auto;padding:0 20px}
+
+  header{
+    border-bottom:1px solid var(--line);
+    padding:28px 0 24px;
+  }
+  .brand{display:flex;align-items:center;gap:12px}
+  .blob{width:44px;height:44px;flex:none}
+  .brand-name{
+    font-family:'Bricolage Grotesque',sans-serif;
+    font-weight:700;font-size:1.35rem;letter-spacing:-0.01em;
+  }
+  .brand-sub{font-family:var(--mono);font-size:.72rem;color:var(--ink-soft)}
+
+  .hero{padding:44px 0 8px}
+  h1{
+    font-family:'Bricolage Grotesque',sans-serif;
+    font-weight:700;font-size:clamp(1.9rem,5vw,2.6rem);
+    letter-spacing:-0.02em;line-height:1.15;
+  }
+  .meta{
+    font-family:var(--mono);font-size:.78rem;color:var(--ink-soft);
+    margin-top:14px;display:flex;gap:18px;flex-wrap:wrap;
+  }
+  .meta b{color:var(--green-dark);font-weight:400}
+
+  .lead{
+    margin:26px 0 0;padding:18px 20px;
+    background:var(--card);border:1px solid var(--line);border-left:4px solid var(--green);
+    border-radius:10px;color:var(--ink-soft);font-size:.95rem;
+  }
+
+  nav.toc{margin:36px 0 8px}
+  nav.toc p{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--ink-soft);margin-bottom:10px}
+  nav.toc ol{list-style:none;counter-reset:toc}
+  nav.toc li{counter-increment:toc;border-bottom:1px dashed var(--line)}
+  nav.toc a{
+    display:flex;gap:14px;align-items:baseline;
+    padding:9px 2px;color:var(--ink);text-decoration:none;font-size:.94rem;
+  }
+  nav.toc a::before{
+    content:counter(toc,decimal-leading-zero);
+    font-family:var(--mono);font-size:.75rem;color:var(--green-dark);
+  }
+  nav.toc a:hover,nav.toc a:focus-visible{color:var(--green-dark)}
+  a:focus-visible{outline:2px solid var(--green);outline-offset:3px;border-radius:3px}
+
+  main{padding-bottom:60px}
+  section{margin-top:48px}
+  h2{
+    font-family:'Bricolage Grotesque',sans-serif;
+    font-weight:700;font-size:1.32rem;letter-spacing:-0.01em;
+    display:flex;gap:12px;align-items:baseline;
+    scroll-margin-top:24px;
+  }
+  h2 .num{font-family:var(--mono);font-weight:400;font-size:.8rem;color:var(--green-dark)}
+  section>p, section>ul, section>ol{margin-top:14px}
+  section p+p{margin-top:12px}
+  ul,ol{padding-left:22px}
+  li{margin-top:7px}
+  li::marker{color:var(--green-dark)}
+  strong{font-weight:600}
+  a{color:var(--green-dark)}
+
+  .table{
+    margin-top:16px;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--card);
+  }
+  .row{display:grid;grid-template-columns:1fr 1.6fr;border-top:1px solid var(--line)}
+  .row:first-child{border-top:none}
+  .row>div{padding:12px 16px;font-size:.93rem}
+  .row>div:first-child{
+    background:#F3F7EF;font-weight:600;border-right:1px solid var(--line);
+  }
+  @media(max-width:540px){
+    .row{grid-template-columns:1fr}
+    .row>div:first-child{border-right:none;border-bottom:1px dashed var(--line)}
+  }
+
+  .note{
+    margin-top:16px;padding:14px 16px;border-radius:10px;
+    background:#F3F7EF;border:1px solid #D6E4CC;font-size:.92rem;color:var(--ink-soft);
+  }
+
+  footer{
+    border-top:1px solid var(--line);
+    padding:26px 0 44px;
+    font-family:var(--mono);font-size:.75rem;color:var(--ink-soft);
+    display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap brand">
+    <svg class="blob" viewBox="0 0 100 100" aria-hidden="true">
+      <path fill="#4CAF1E" d="M50 4c14 0 27 6 35 16s11 24 8 37-12 24-24 30-27 7-38 1S12 70 9 57 10 29 20 18 36 4 50 4z"/>
+      <path d="M36 40q6-7 12-1M56 40q6-7 12-1M38 62q13 9 26 0" fill="none" stroke="#1C2318" stroke-width="4" stroke-linecap="round"/>
+    </svg>
+    <div>
+      <div class="brand-name">Painless</div>
+      <div class="brand-sub">bepainless.pl</div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="hero">
+    <h1>Polityka prywatności</h1>
+    <div class="meta">
+      <span>wersja: <b>2.0</b></span>
+      <span>obowiązuje od: <b>[DATA PUBLIKACJI]</b></span>
+      <span>dotyczy: <b>aplikacji Painless (AI‑Fizjo)</b></span>
+    </div>
+    <p class="lead">
+      Painless to aplikacja, w której rozmawiasz z asystentem AI o dolegliwościach bólowych.
+      Opisy Twoich dolegliwości to dane dotyczące zdrowia — traktujemy je z najwyższą ostrożnością.
+      Ta polityka wyjaśnia prostym językiem: jakie dane zbieramy, po co, komu je powierzamy
+      i jak możesz je w każdej chwili usunąć.
+    </p>
+  </div>
+
+  <nav class="toc" aria-label="Spis treści">
+    <p>Spis treści</p>
+    <ol>
+      <li><a href="#administrator">Kto odpowiada za Twoje dane</a></li>
+      <li><a href="#dane">Jakie dane zbieramy</a></li>
+      <li><a href="#cele">Po co i na jakiej podstawie przetwarzamy dane</a></li>
+      <li><a href="#odbiorcy">Komu powierzamy dane</a></li>
+      <li><a href="#usa">Przekazywanie danych poza EOG (USA)</a></li>
+      <li><a href="#okres">Jak długo przechowujemy dane</a></li>
+      <li><a href="#prawa">Twoje prawa — w tym „Usuń moje dane”</a></li>
+      <li><a href="#bezpieczenstwo">Jak chronimy Twoje dane</a></li>
+      <li><a href="#wiek">Wiek użytkowników</a></li>
+      <li><a href="#zmiany">Zmiany tej polityki</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ol>
+  </nav>
+
+  <section id="administrator">
+    <h2><span class="num">01</span>Kto odpowiada za Twoje dane</h2>
+    <p>
+      Administratorem Twoich danych osobowych jest zespół twórców projektu Painless —
+      trzy osoby fizyczne wspólnie prowadzące projekt. Pełne dane identyfikacyjne administratorów
+      udostępniamy na każde żądanie: wystarczy, że napiszesz na adres
+      <strong>[ADRES E‑MAIL KONTAKTOWY]</strong>, a otrzymasz je niezwłocznie.
+    </p>
+    <p>
+      Ten sam adres służy do kontaktu we wszystkich sprawach dotyczących Twoich danych osobowych.
+      Po zarejestrowaniu spółki, która przejmie projekt, to ona stanie się administratorem danych —
+      zaktualizujemy wtedy tę politykę i poinformujemy Cię o zmianie.
+    </p>
+  </section>
+
+  <section id="dane">
+    <h2><span class="num">02</span>Jakie dane zbieramy</h2>
+    <div class="table">
+      <div class="row"><div>Dane konta</div><div>imię oraz adres e‑mail — podajesz je przy logowaniu (logowanie odbywa się przez link wysyłany na Twój e‑mail, bez hasła).</div></div>
+      <div class="row"><div>Treść rozmów</div><div>wiadomości, które wymieniasz z asystentem — w tym opisy dolegliwości bólowych. To <strong>dane dotyczące zdrowia</strong> (art. 9 RODO), dlatego przetwarzamy je wyłącznie za Twoją wyraźną zgodą.</div></div>
+      <div class="row"><div>Dane o zgodach</div><div>informacja, że wyraziłeś/aś zgody, wraz z datą ich wyrażenia.</div></div>
+      <div class="row"><div>Dane techniczne</div><div>podstawowe informacje niezbędne do działania aplikacji (np. data założenia konta, identyfikatory sesji logowania).</div></div>
+      <div class="row"><div>Opinie anonimowe</div><div>jeśli usuwając konto podasz powód usunięcia albo wypełnisz w aplikacji ankietę opinii — te odpowiedzi zapisujemy <strong>bez powiązania z Tobą</strong>, w formie anonimowej. Nie jesteśmy w stanie połączyć ich z Twoją osobą.</div></div>
+    </div>
+    <p>
+      Świadomie <strong>nie zbieramy</strong>: Twojego nastroju z ekranu powitalnego (wybór nie jest nigdzie
+      zapisywany), danych o lokalizacji ani danych z innych aplikacji.
+    </p>
+  </section>
+
+  <section id="cele">
+    <h2><span class="num">03</span>Po co i na jakiej podstawie przetwarzamy dane</h2>
+    <div class="table">
+      <div class="row"><div>Prowadzenie rozmowy z asystentem i pamiętanie jej historii</div><div>Twoja <strong>wyraźna zgoda</strong> na przetwarzanie danych o zdrowiu (art. 9 ust. 2 lit. a RODO). Bez tej zgody czat jest niedostępny.</div></div>
+      <div class="row"><div>Założenie i obsługa konta, logowanie</div><div>niezbędność do świadczenia usługi, z której korzystasz (art. 6 ust. 1 lit. b RODO).</div></div>
+      <div class="row"><div>Zapewnienie bezpieczeństwa i rozwiązywanie problemów technicznych</div><div>nasz prawnie uzasadniony interes (art. 6 ust. 1 lit. f RODO).</div></div>
+      <div class="row"><div>Rozwój produktu na podstawie anonimowych opinii</div><div>dane anonimowe nie pozwalają Cię zidentyfikować, więc nie są danymi osobowymi.</div></div>
+    </div>
+    <p>
+      Podanie danych jest dobrowolne, ale bez imienia i adresu e‑mail nie założysz konta,
+      a bez zgody na przetwarzanie danych o zdrowiu nie skorzystasz z czatu — bo cała jego istota
+      polega na rozmowie o Twoich dolegliwościach.
+    </p>
+    <p>
+      <strong>Ważne:</strong> asystent AI udziela wskazówek edukacyjnych. Nie stawia diagnoz,
+      nie zastępuje konsultacji lekarskiej ani fizjoterapeutycznej.
+    </p>
+  </section>
+
+  <section id="odbiorcy">
+    <h2><span class="num">04</span>Komu powierzamy dane</h2>
+    <p>
+      Nie sprzedajemy Twoich danych i nie udostępniamy ich do celów reklamowych. Korzystamy natomiast
+      z zaufanych dostawców technologii (tzw. podmiotów przetwarzających), bez których aplikacja nie
+      mogłaby działać:
+    </p>
+    <div class="table">
+      <div class="row"><div>Anthropic&nbsp;(USA)</div><div>dostawca modelu AI, który generuje odpowiedzi asystenta. Otrzymuje treść rozmowy — zobacz sekcję 05 o przekazywaniu danych do USA.</div></div>
+      <div class="row"><div>Supabase</div><div>baza danych i system logowania — tu przechowywane są Twoje dane konta i historia rozmów.</div></div>
+      <div class="row"><div>Vercel</div><div>hosting aplikacji (serwery, na których działa Painless).</div></div>
+      <div class="row"><div>Resend</div><div>wysyłka maili z linkiem logowania — otrzymuje Twój adres e‑mail i treść maila logowania, nie ma dostępu do rozmów.</div></div>
+    </div>
+    <p>
+      Jeśli w przyszłości uruchomimy płatności, dojdzie do tej listy operator płatności
+      (planujemy Stripe) — zaktualizujemy wtedy tę politykę, zanim zaczniesz z płatności korzystać.
+    </p>
+  </section>
+
+  <section id="usa">
+    <h2><span class="num">05</span>Przekazywanie danych poza EOG (USA)</h2>
+    <p>
+      Odpowiedzi asystenta generuje model AI firmy Anthropic z siedzibą w Stanach Zjednoczonych.
+      Oznacza to, że treść Twojej rozmowy jest przekazywana poza Europejski Obszar Gospodarczy.
+    </p>
+    <p>
+      Przekazywanie odbywa się na podstawie mechanizmów przewidzianych w RODO —
+      <strong>[DO POTWIERDZENIA Z PRAWNIKIEM: ramy Data Privacy Framework / standardowe klauzule
+      umowne (SCC) właściwe dla danego dostawcy]</strong>. Kopię informacji o stosowanych
+      zabezpieczeniach możesz uzyskać, kontaktując się z nami.
+    </p>
+  </section>
+
+  <section id="okres">
+    <h2><span class="num">06</span>Jak długo przechowujemy dane</h2>
+    <ul>
+      <li><strong>Dane konta i historia rozmów</strong> — do momentu usunięcia konta przez Ciebie (przycisk „Usuń moje dane” w ustawieniach) lub przez nas na Twoje żądanie.</li>
+      <li><strong>Dane o zgodach</strong> — przez okres korzystania z aplikacji; usuwane razem z kontem.</li>
+      <li><strong>Opinie anonimowe</strong> — bezterminowo, ponieważ nie da się ich powiązać z Twoją osobą.</li>
+      <li><strong>[DO POTWIERDZENIA Z PRAWNIKIEM: maksymalny okres przechowywania historii rozmów przy nieaktywnych kontach]</strong></li>
+    </ul>
+  </section>
+
+  <section id="prawa">
+    <h2><span class="num">07</span>Twoje prawa — w tym „Usuń moje dane”</h2>
+    <p>W związku z przetwarzaniem Twoich danych masz prawo do:</p>
+    <ul>
+      <li><strong>usunięcia danych</strong> — najszybciej zrobisz to samodzielnie: w ustawieniach aplikacji znajdziesz przycisk <strong>„Usuń moje dane”</strong>, który nieodwracalnie kasuje Twoje konto, profil i całą historię rozmów;</li>
+      <li><strong>dostępu do danych</strong> i otrzymania ich kopii;</li>
+      <li><strong>sprostowania</strong> (poprawienia) danych;</li>
+      <li><strong>ograniczenia przetwarzania</strong> oraz <strong>sprzeciwu</strong> wobec przetwarzania opartego na naszym uzasadnionym interesie;</li>
+      <li><strong>przenoszenia danych</strong>;</li>
+      <li><strong>cofnięcia zgody w dowolnym momencie</strong> — nie wpływa to na zgodność z prawem przetwarzania sprzed cofnięcia zgody; cofnięcie zgody na dane o zdrowiu oznacza brak możliwości dalszego korzystania z czatu;</li>
+      <li><strong>skargi do organu nadzorczego</strong> — Prezesa Urzędu Ochrony Danych Osobowych (ul. Stawki 2, 00‑193 Warszawa, <a href="https://uodo.gov.pl" rel="noopener">uodo.gov.pl</a>).</li>
+    </ul>
+    <p>
+      Aby skorzystać z praw, których nie obsługuje sama aplikacja, napisz do nas:
+      <strong>[ADRES E‑MAIL KONTAKTOWY]</strong>. Odpowiadamy najpóźniej w ciągu miesiąca.
+    </p>
+    <div class="note">
+      Uwaga: anonimowych opinii (powody usunięcia konta, ankiety) nie jesteśmy w stanie usunąć
+      na Twoje żądanie, ponieważ nie wiemy, które odpowiedzi pochodzą od Ciebie — na tym polega
+      ich anonimowość.
+    </div>
+  </section>
+
+  <section id="bezpieczenstwo">
+    <h2><span class="num">08</span>Jak chronimy Twoje dane</h2>
+    <ul>
+      <li>Połączenie z aplikacją jest szyfrowane (HTTPS).</li>
+      <li>Każdy użytkownik ma techniczny dostęp wyłącznie do własnych danych — reguły dostępu są egzekwowane na poziomie bazy danych.</li>
+      <li>Rozmowa z asystentem jest możliwa dopiero po wyrażeniu zgód — blokada działa po stronie serwera i nie da się jej obejść.</li>
+      <li>Klucze dostępowe do usług przechowujemy wyłącznie po stronie serwera.</li>
+      <li>Logowanie bez hasła (link jednorazowy na e‑mail) eliminuje ryzyko wycieku haseł.</li>
+    </ul>
+  </section>
+
+  <section id="wiek">
+    <h2><span class="num">09</span>Wiek użytkowników</h2>
+    <p>
+      Aplikacja jest przeznaczona dla osób, które ukończyły <strong>[16 / 18 — DO POTWIERDZENIA
+      Z PRAWNIKIEM]</strong> lat. Jeśli nie masz wymaganego wieku, nie korzystaj z aplikacji.
+      Jeśli dowiemy się, że przetwarzamy dane osoby poniżej tej granicy wieku bez wymaganej zgody,
+      usuniemy je.
+    </p>
+  </section>
+
+  <section id="zmiany">
+    <h2><span class="num">10</span>Zmiany tej polityki</h2>
+    <p>
+      Aplikacja się rozwija, więc ta polityka może się zmieniać (np. gdy dodamy płatności).
+      O istotnych zmianach poinformujemy Cię w aplikacji, zanim zaczną obowiązywać.
+      Aktualna wersja jest zawsze dostępna pod tym adresem, z widocznym numerem wersji i datą.
+    </p>
+  </section>
+
+  <section id="kontakt">
+    <h2><span class="num">11</span>Kontakt</h2>
+    <p>
+      Masz pytania o swoje dane albo o tę politykę? Napisz:
+      <strong>[ADRES E‑MAIL KONTAKTOWY]</strong>.
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap" style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:0 20px">
+    <span>Painless · polityka prywatności v2.0</span>
+    <span>[DATA PUBLIKACJI]</span>
+  </div>
+</footer>
+
+</body>
+</html>
