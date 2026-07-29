@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Regulamin — Painless</title>
+<meta name="description" content="Regulamin korzystania z aplikacji Painless (AI-Fizjo).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Inter:wght@400;600&family=Space+Mono&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green:#4CAF1E;
+    --green-dark:#3A8A15;
+    --ink:#1C2318;
+    --ink-soft:#4A5544;
+    --paper:#FAFBF7;
+    --card:#FFFFFF;
+    --line:#E3E9DD;
+    --mono:'Space Mono',monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+  body{
+    font-family:'Inter',system-ui,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.65;
+    font-size:16px;
+  }
+  .wrap{max-width:720px;margin:0 auto;padding:0 20px}
+
+  header{
+    border-bottom:1px solid var(--line);
+    padding:28px 0 24px;
+  }
+  .brand{display:flex;align-items:center;gap:12px}
+  .blob{width:44px;height:44px;flex:none}
+  .brand-name{
+    font-family:'Bricolage Grotesque',sans-serif;
+    font-weight:700;font-size:1.35rem;letter-spacing:-0.01em;
+  }
+  .brand-sub{font-family:var(--mono);font-size:.72rem;color:var(--ink-soft)}
+
+  .hero{padding:44px 0 8px}
+  h1{
+    font-family:'Bricolage Grotesque',sans-serif;
+    font-weight:700;font-size:clamp(1.9rem,5vw,2.6rem);
+    letter-spacing:-0.02em;line-height:1.15;
+  }
+  .meta{
+    font-family:var(--mono);font-size:.78rem;color:var(--ink-soft);
+    margin-top:14px;display:flex;gap:18px;flex-wrap:wrap;
+  }
+  .meta b{color:var(--green-dark);font-weight:400}
+
+  .lead{
+    margin:26px 0 0;padding:18px 20px;
+    background:var(--card);border:1px solid var(--line);border-left:4px solid var(--green);
+    border-radius:10px;color:var(--ink-soft);font-size:.95rem;
+  }
+
+  nav.toc{margin:36px 0 8px}
+  nav.toc p{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--ink-soft);margin-bottom:10px}
+  nav.toc ol{list-style:none;counter-reset:toc}
+  nav.toc li{counter-increment:toc;border-bottom:1px dashed var(--line)}
+  nav.toc a{
+    display:flex;gap:14px;align-items:baseline;
+    padding:9px 2px;color:var(--ink);text-decoration:none;font-size:.94rem;
+  }
+  nav.toc a::before{
+    content:counter(toc,decimal-leading-zero);
+    font-family:var(--mono);font-size:.75rem;color:var(--green-dark);
+  }
+  nav.toc a:hover,nav.toc a:focus-visible{color:var(--green-dark)}
+  a:focus-visible{outline:2px solid var(--green);outline-offset:3px;border-radius:3px}
+
+  main{padding-bottom:60px}
+  section{margin-top:48px}
+  h2{
+    font-family:'Bricolage Grotesque',sans-serif;
+    font-weight:700;font-size:1.32rem;letter-spacing:-0.01em;
+    display:flex;gap:12px;align-items:baseline;
+    scroll-margin-top:24px;
+  }
+  h2 .num{font-family:var(--mono);font-weight:400;font-size:.8rem;color:var(--green-dark)}
+  section>p, section>ul, section>ol{margin-top:14px}
+  section p+p{margin-top:12px}
+  ul,ol{padding-left:22px}
+  li{margin-top:7px}
+  li::marker{color:var(--green-dark)}
+  strong{font-weight:600}
+  a{color:var(--green-dark)}
+
+  .table{
+    margin-top:16px;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--card);
+  }
+  .row{display:grid;grid-template-columns:1fr 1.6fr;border-top:1px solid var(--line)}
+  .row:first-child{border-top:none}
+  .row>div{padding:12px 16px;font-size:.93rem}
+  .row>div:first-child{
+    background:#F3F7EF;font-weight:600;border-right:1px solid var(--line);
+  }
+  @media(max-width:540px){
+    .row{grid-template-columns:1fr}
+    .row>div:first-child{border-right:none;border-bottom:1px dashed var(--line)}
+  }
+
+  .note{
+    margin-top:16px;padding:14px 16px;border-radius:10px;
+    background:#F3F7EF;border:1px solid #D6E4CC;font-size:.92rem;color:var(--ink-soft);
+  }
+  .alert{
+    margin-top:16px;padding:16px 18px;border-radius:10px;
+    background:#FFF8E8;border:1px solid #E8D9A8;font-size:.95rem;color:var(--ink);
+  }
+
+  footer{
+    border-top:1px solid var(--line);
+    padding:26px 0 44px;
+    font-family:var(--mono);font-size:.75rem;color:var(--ink-soft);
+    display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap brand">
+    <svg class="blob" viewBox="0 0 100 100" aria-hidden="true">
+      <path fill="#4CAF1E" d="M50 4c14 0 27 6 35 16s11 24 8 37-12 24-24 30-27 7-38 1S12 70 9 57 10 29 20 18 36 4 50 4z"/>
+      <path d="M36 40q6-7 12-1M56 40q6-7 12-1M38 62q13 9 26 0" fill="none" stroke="#1C2318" stroke-width="4" stroke-linecap="round"/>
+    </svg>
+    <div>
+      <div class="brand-name">Painless</div>
+      <div class="brand-sub">bepainless.pl</div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="hero">
+    <h1>Regulamin</h1>
+    <div class="meta">
+      <span>wersja: <b>1.0</b></span>
+      <span>obowiązuje od: <b>[DATA PUBLIKACJI]</b></span>
+      <span>dotyczy: <b>aplikacji Painless (AI‑Fizjo)</b></span>
+    </div>
+    <p class="lead">
+      Painless jest bezpłatny. Ten regulamin wyjaśnia prostym językiem, czym jest ta aplikacja,
+      a czym nie jest, kto może z niej korzystać i na jakich zasadach. Warto przeczytać zwłaszcza
+      sekcję 02 — opisuje, gdzie leżą granice tego, co Painless może dla Ciebie zrobić.
+    </p>
+  </div>
+
+  <nav class="toc" aria-label="Spis treści">
+    <p>Spis treści</p>
+    <ol>
+      <li><a href="#kto">Kto świadczy usługę</a></li>
+      <li><a href="#czym-jest">Czym jest Painless, a czym nie jest</a></li>
+      <li><a href="#kto-moze">Kto może korzystać z aplikacji</a></li>
+      <li><a href="#konto">Zakładanie i usuwanie konta</a></li>
+      <li><a href="#zasady">Zasady korzystania</a></li>
+      <li><a href="#wymagania">Czego potrzebujesz technicznie</a></li>
+      <li><a href="#bezplatnosc">Bezpłatność i dostępność</a></li>
+      <li><a href="#odpowiedzialnosc">Odpowiedzialność</a></li>
+      <li><a href="#reklamacje">Reklamacje</a></li>
+      <li><a href="#dane">Twoje dane osobowe</a></li>
+      <li><a href="#zmiany">Zmiany regulaminu</a></li>
+      <li><a href="#koncowe">Postanowienia końcowe</a></li>
+    </ol>
+  </nav>
+
+  <section id="kto">
+    <h2><span class="num">01</span>Kto świadczy usługę</h2>
+    <p>
+      Usługę świadczą wspólnie trzy osoby fizyczne prowadzące projekt Painless:
+      <strong>Jędrzej Wąsik</strong>, <strong>[imię i nazwisko]</strong> oraz <strong>[imię i nazwisko]</strong>
+      (dalej: „my”, „nas”).
+    </p>
+    <p>
+      Kontakt we wszystkich sprawach dotyczących aplikacji: <strong>movepainless@gmail.com</strong>.
+      Odpisujemy najszybciej, jak możemy.
+    </p>
+    <p>
+      Jeśli w przyszłości projekt przejmie spółka, poinformujemy Cię o tym i zaktualizujemy ten regulamin.
+    </p>
+  </section>
+
+  <section id="czym-jest">
+    <h2><span class="num">02</span>Czym jest Painless, a czym nie jest</h2>
+    <p>
+      Painless to aplikacja edukacyjna. Rozmawiasz w niej z asystentem o dolegliwościach bólowych
+      układu mięśniowo‑szkieletowego i otrzymujesz ogólne wskazówki: przykładowe ćwiczenia,
+      podpowiedzi dotyczące codziennych nawyków oraz informacje o tym, kiedy warto zgłosić się do specjalisty.
+    </p>
+
+    <div class="alert">
+      <p><strong>Trzy rzeczy, o których musisz wiedzieć, zanim zaczniesz:</strong></p>
+      <ul>
+        <li><strong>Rozmawiasz ze sztuczną inteligencją, nie z człowiekiem.</strong> Odpowiedzi powstają
+          automatycznie i mogą zawierać błędy lub nieścisłości. Żaden fizjoterapeuta nie czyta Twoich
+          wiadomości ani na nie nie odpowiada.</li>
+        <li><strong>Painless nie stawia diagnoz, nie prowadzi leczenia i nie zaleca leków.</strong>
+          Nie zastępuje wizyty u lekarza ani u fizjoterapeuty.</li>
+        <li><strong>Nie podejmuj decyzji dotyczących zdrowia wyłącznie na podstawie tego, co powie aplikacja.</strong>
+          Jeśli objawy są nagłe, nasilają się lub niepokoją Cię — skontaktuj się z lekarzem.
+          W sytuacji zagrożenia życia zadzwoń pod <strong>112</strong>.</li>
+      </ul>
+    </div>
+
+    <p>
+      Jeśli w rozmowie pojawią się objawy, które wymagają pilnej oceny lekarskiej, asystent przerwie
+      udzielanie wskazówek i poprosi Cię o kontakt ze specjalistą. Potraktuj to poważnie — to nie jest
+      formalność, tylko najważniejsza funkcja bezpieczeństwa w tej aplikacji.
+    </p>
+    <p>
+      Painless nie jest wyrobem medycznym i nie służy do diagnozowania, monitorowania ani leczenia
+      jakiejkolwiek choroby.
+    </p>
+  </section>
+
+  <section id="kto-moze">
+    <h2><span class="num">03</span>Kto może korzystać z aplikacji</h2>
+    <p>
+      Painless jest przeznaczony <strong>wyłącznie dla osób pełnoletnich</strong>, które ukończyły 18 lat.
+      Przy zakładaniu konta potwierdzasz swój wiek.
+    </p>
+    <p>
+      Jeśli nie masz ukończonych 18 lat, nie korzystaj z aplikacji. Jeśli dowiemy się, że konto należy
+      do osoby niepełnoletniej, usuniemy je wraz z danymi.
+    </p>
+  </section>
+
+  <section id="konto">
+    <h2><span class="num">04</span>Zakładanie i usuwanie konta</h2>
+    <p>
+      Umowa o korzystanie z aplikacji zostaje zawarta w chwili, gdy zakładasz konto: podajesz imię
+      i adres e‑mail, akceptujesz ten regulamin, wyrażasz zgodę na przetwarzanie danych o zdrowiu
+      i potwierdzasz wiek. Logowanie odbywa się przez kod wysyłany na Twój adres e‑mail — nie ustawiasz hasła.
+    </p>
+    <p>
+      Umowę możesz rozwiązać <strong>w każdej chwili i bez podania powodu</strong> — wystarczy, że użyjesz
+      przycisku „Usuń moje dane” w ustawieniach. Konto i historia rozmów zostają wtedy usunięte.
+      Możesz też napisać do nas na adres kontaktowy, a zrobimy to za Ciebie.
+    </p>
+    <p>
+      My możemy rozwiązać umowę, jeśli rażąco naruszysz zasady z sekcji 05 albo jeśli zakończymy
+      działanie aplikacji. W obu przypadkach uprzedzimy Cię e‑mailem, chyba że naruszenie wymaga
+      natychmiastowej reakcji.
+    </p>
+  </section>
+
+  <section id="zasady">
+    <h2><span class="num">05</span>Zasady korzystania</h2>
+    <p>Korzystając z Painless, zobowiązujesz się, że:</p>
+    <ul>
+      <li>nie będziesz dostarczać treści o charakterze bezprawnym — w szczególności obraźliwych,
+        nawołujących do przemocy lub naruszających prawa innych osób;</li>
+      <li>nie będziesz podszywać się pod inną osobę ani zakładać konta na cudze dane;</li>
+      <li>nie będziesz próbować zakłócić działania aplikacji, obejść jej zabezpieczeń ani pobierać jej
+        zawartości w sposób automatyczny;</li>
+      <li>nie będziesz wykorzystywać aplikacji do udzielania porad innym osobom ani do celów komercyjnych;</li>
+      <li>rozumiesz, że wskazówki asystenta wykonujesz na własną odpowiedzialność i przerwiesz ćwiczenie,
+        jeśli wywoła ból lub dyskomfort.</li>
+    </ul>
+    <div class="note">
+      Prosimy też o jedną rzecz dla Twojego bezpieczeństwa: <strong>nie wpisuj w rozmowie danych,
+      których nie musimy znać</strong> — numeru PESEL, adresu, danych innych osób. Do udzielenia
+      wskazówek wystarczy opis tego, co Cię boli.
+    </div>
+  </section>
+
+  <section id="wymagania">
+    <h2><span class="num">06</span>Czego potrzebujesz technicznie</h2>
+    <p>
+      Do korzystania z Painless wystarczy urządzenie z dostępem do internetu, aktualna przeglądarka
+      internetowa z włączoną obsługą JavaScript oraz aktywny adres e‑mail, na który przyjdzie kod logowania.
+      Aplikację możesz dodać do ekranu głównego telefonu, ale nie musisz nic instalować ze sklepu.
+    </p>
+  </section>
+
+  <section id="bezplatnosc">
+    <h2><span class="num">07</span>Bezpłatność i dostępność</h2>
+    <p>
+      <strong>Korzystanie z Painless jest w pełni bezpłatne.</strong> Nie pobieramy żadnych opłat,
+      nie prosimy o dane karty i nie ukrywamy płatnych funkcji.
+    </p>
+    <p>
+      W przyszłości planujemy udostępnić wersję płatną. Jeśli to nastąpi, jej warunki opiszemy osobno,
+      a korzystanie z niej będzie wymagało Twojej wyraźnej decyzji. Informacje o planowanej cenie,
+      które możesz spotkać w aplikacji lub w naszych materiałach, mają charakter orientacyjny
+      i nie stanowią oferty w rozumieniu Kodeksu cywilnego.
+    </p>
+    <p>
+      Painless jest projektem we wczesnej fazie rozwoju. Nie gwarantujemy nieprzerwanej dostępności —
+      możemy wprowadzać zmiany, przerwy techniczne, a także zakończyć działanie aplikacji.
+      O planowanym zakończeniu uprzedzimy Cię z wyprzedzeniem, abyś zdążył/a zapisać to, co dla Ciebie ważne.
+    </p>
+  </section>
+
+  <section id="odpowiedzialnosc">
+    <h2><span class="num">08</span>Odpowiedzialność</h2>
+    <p>
+      Dokładamy starań, aby wskazówki w aplikacji były rzetelne i bezpieczne, a treści merytoryczne
+      przygotowuje fizjoterapeuta. Nie możemy jednak zagwarantować, że wygenerowana automatycznie
+      odpowiedź będzie w każdym przypadku trafna ani odpowiednia dla Twojej sytuacji — dlatego prosimy,
+      byś traktował/a ją jako informację edukacyjną, a nie zalecenie medyczne.
+    </p>
+    <p>
+      Odpowiadamy za szkody na zasadach określonych w przepisach prawa. Nie ograniczamy i nie wyłączamy
+      odpowiedzialności w zakresie, w jakim przepisy na to nie pozwalają — w szczególności wobec konsumentów
+      oraz za szkody wyrządzone umyślnie i za szkody na osobie.
+    </p>
+    <p>
+      Nie odpowiadamy natomiast za skutki podania nam nieprawdziwych informacji o swoim stanie zdrowia,
+      za wykonywanie ćwiczeń wbrew wyraźnemu zaleceniu kontaktu z lekarzem oraz za przerwy w działaniu
+      aplikacji wynikające z awarii po stronie dostawców usług, z których korzystamy.
+    </p>
+  </section>
+
+  <section id="reklamacje">
+    <h2><span class="num">09</span>Reklamacje</h2>
+    <p>
+      Jeśli coś nie działa, budzi Twój sprzeciw albo uważasz, że otrzymana odpowiedź była nieodpowiednia —
+      napisz na <strong>movepainless@gmail.com</strong>. To dla nas ważne, także wtedy, gdy nie chodzi
+      o formalną reklamację.
+    </p>
+    <p>
+      W zgłoszeniu opisz, czego dotyczy sprawa i czego oczekujesz. Odpowiemy na adres e‑mail,
+      z którego napisałeś/aś, <strong>w terminie 14 dni</strong> od otrzymania zgłoszenia.
+    </p>
+    <p>
+      Jeśli jesteś konsumentem, możesz też skorzystać z pozasądowych sposobów rozpatrywania reklamacji
+      i dochodzenia roszczeń — informacji udzielają miejscy i powiatowi rzecznicy konsumentów
+      oraz Wojewódzkie Inspektoraty Inspekcji Handlowej. Skorzystanie z nich jest dobrowolne.
+    </p>
+  </section>
+
+  <section id="dane">
+    <h2><span class="num">10</span>Twoje dane osobowe</h2>
+    <p>
+      Opisy dolegliwości, które przekazujesz asystentowi, to dane dotyczące zdrowia. Przetwarzamy je
+      wyłącznie na podstawie Twojej wyraźnej zgody, wyrażonej przy zakładaniu konta. Zgodę możesz wycofać
+      w każdej chwili.
+    </p>
+    <p>
+      Szczegóły — jakie dane zbieramy, komu je powierzamy, jak długo je przechowujemy i jak z nich
+      korzystasz — opisuje <a href="polityka-prywatnosci.html">Polityka prywatności</a>,
+      która stanowi integralną część tego regulaminu.
+    </p>
+  </section>
+
+  <section id="zmiany">
+    <h2><span class="num">11</span>Zmiany regulaminu</h2>
+    <p>
+      Możemy zmienić ten regulamin, jeśli zmienimy sposób działania aplikacji, dodamy nowe funkcje
+      albo zmienią się przepisy prawa.
+    </p>
+    <p>
+      O każdej zmianie poinformujemy Cię e‑mailem lub komunikatem w aplikacji, z co najmniej
+      <strong>14‑dniowym wyprzedzeniem</strong>. Jeśli nie zgadzasz się na nową wersję, możesz do dnia
+      jej wejścia w życie usunąć konto — bez żadnych konsekwencji.
+    </p>
+  </section>
+
+  <section id="koncowe">
+    <h2><span class="num">12</span>Postanowienia końcowe</h2>
+    <p>
+      Regulamin jest dostępny na tej stronie w formie umożliwiającej jego pobranie, zapisanie i wydrukowanie.
+      Udostępniamy go zanim założysz konto.
+    </p>
+    <p>
+      W sprawach nieuregulowanych stosuje się prawo polskie, w szczególności Kodeks cywilny,
+      ustawę o świadczeniu usług drogą elektroniczną oraz — jeśli jesteś konsumentem —
+      przepisy chroniące konsumentów. Regulamin nie ogranicza uprawnień, które przysługują Ci
+      na podstawie bezwzględnie obowiązujących przepisów.
+    </p>
+    <p>
+      Jeśli którekolwiek postanowienie regulaminu okaże się nieważne, pozostałe zachowują moc.
+    </p>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <span>Painless — regulamin, wersja 1.0</span>
+  <span>movepainless@gmail.com</span>
+</footer>
+
+</body>
+</html>
