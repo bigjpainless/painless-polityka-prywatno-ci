@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Polityka prywatności — Painless</title>
+<meta name="description" content="Polityka prywatności aplikacji Painless.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Inter:wght@400;600&family=Space+Mono&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green:#4CAF1E;
+    --green-dark:#3A8A15;
+    --ink:#1C2318;
+    --ink-soft:#4A5544;
+    --paper:#FAFBF7;
+    --card:#FFFFFF;
+    --line:#E3E9DD;
+    --mono:'Space Mono',monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+  body{
+    font-family:'Inter',system-ui,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.65;
+    font-size:16px;
+  }
+  .wrap{max-width:720px;margin:0 auto;padding:0 20px}
+
+  header{
+    border-bottom:1px solid var(--line);
+    padding:28px 0 24px;
+  }
+  .brand{display:flex;align-items:center;gap:12px}
+  .blob{width:44px;height:44px;flex:none}
+  .brand-name{
+    font-family:'Bricolage Grotesque',sans-serif;
+    font-weight:700;font-size:1.35rem;letter-spacing:-0.01em;
+  }
+  .brand-sub{font-family:var(--mono);font-size:.72rem;color:var(--ink-soft)}
+
+  .hero{padding:44px 0 8px}
+  h1{
+    font-family:'Bricolage Grotesque',sans-serif;
+    font-weight:700;font-size:clamp(1.9rem,5vw,2.6rem);
+    letter-spacing:-0.02em;line-height:1.15;
+  }
+  .meta{
+    font-family:var(--mono);font-size:.78rem;color:var(--ink-soft);
+    margin-top:14px;display:flex;gap:18px;flex-wrap:wrap;
+  }
+  .meta b{color:var(--green-dark);font-weight:400}
+
+  .lead{
+    margin:26px 0 0;padding:18px 20px;
+    background:var(--card);border:1px solid var(--line);border-left:4px solid var(--green);
+    border-radius:10px;color:var(--ink-soft);font-size:.95rem;
+  }
+
+  nav.toc{margin:36px 0 8px}
+  nav.toc p{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--ink-soft);margin-bottom:10px}
+  nav.toc ol{list-style:none;counter-reset:toc}
+  nav.toc li{counter-increment:toc;border-bottom:1px dashed var(--line)}
+  nav.toc a{
+    display:flex;gap:14px;align-items:baseline;
+    padding:9px 2px;color:var(--ink);text-decoration:none;font-size:.94rem;
+  }
+  nav.toc a::before{
+    content:counter(toc,decimal-leading-zero);
+    font-family:var(--mono);font-size:.75rem;color:var(--green-dark);
+  }
+  nav.toc a:hover,nav.toc a:focus-visible{color:var(--green-dark)}
+  a:focus-visible{outline:2px solid var(--green);outline-offset:3px;border-radius:3px}
+
+  main{padding-bottom:60px}
+  section{margin-top:48px}
+  h2{
+    font-family:'Bricolage Grotesque',sans-serif;
+    font-weight:700;font-size:1.32rem;letter-spacing:-0.01em;
+    display:flex;gap:12px;align-items:baseline;
+    scroll-margin-top:24px;
+  }
+  h2 .num{font-family:var(--mono);font-weight:400;font-size:.8rem;color:var(--green-dark)}
+  section>p, section>ul, section>ol{margin-top:14px}
+  section p+p{margin-top:12px}
+  ul,ol{padding-left:22px}
+  li{margin-top:7px}
+  li::marker{color:var(--green-dark)}
+  strong{font-weight:600}
+  a{color:var(--green-dark)}
+
+  .table{
+    margin-top:16px;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--card);
+  }
+  .row{display:grid;grid-template-columns:1fr 1.6fr;border-top:1px solid var(--line)}
+  .row:first-child{border-top:none}
+  .row>div{padding:12px 16px;font-size:.93rem}
+  .row>div:first-child{
+    background:#F3F7EF;font-weight:600;border-right:1px solid var(--line);
+  }
+  @media(max-width:540px){
+    .row{grid-template-columns:1fr}
+    .row>div:first-child{border-right:none;border-bottom:1px dashed var(--line)}
+  }
+
+  .note{
+    margin-top:16px;padding:14px 16px;border-radius:10px;
+    background:#F3F7EF;border:1px solid #D6E4CC;font-size:.92rem;color:var(--ink-soft);
+  }
+  .alert{
+    margin-top:16px;padding:16px 18px;border-radius:10px;
+    background:#FFF8E8;border:1px solid #E8D9A8;font-size:.95rem;color:var(--ink);
+  }
+
+  footer{
+    border-top:1px solid var(--line);
+    padding:26px 0 44px;
+    font-family:var(--mono);font-size:.75rem;color:var(--ink-soft);
+    display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  }
+
+  .tw{margin-top:16px;overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+  .tw table{border-collapse:collapse;width:100%;font-size:.9rem}
+  .tw th,.tw td{padding:10px 14px;text-align:left;vertical-align:top;border-top:1px solid var(--line)}
+  .tw thead th{background:#F3F7EF;font-weight:600;border-top:none}
+  .tw tbody tr:first-child td{border-top:none}
+  .tw thead:empty,.tw thead tr:empty{display:none}
+  .tw td:first-child{font-weight:600}
+  .note p+p{margin-top:8px}
+  .note ul{margin-top:8px}
+  @media(max-width:540px){.tw th,.tw td{padding:8px 7px;font-size:.8rem;hyphens:auto}.tw table{font-size:.8rem}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap brand">
+    <svg class="blob" viewBox="0 0 100 100" aria-hidden="true">
+      <path fill="#4CAF1E" d="M50 4c14 0 27 6 35 16s11 24 8 37-12 24-24 30-27 7-38 1S12 70 9 57 10 29 20 18 36 4 50 4z"/>
+      <path d="M36 40q6-7 12-1M56 40q6-7 12-1M38 62q13 9 26 0" fill="none" stroke="#1C2318" stroke-width="4" stroke-linecap="round"/>
+    </svg>
+    <div>
+      <div class="brand-name">Painless</div>
+      <div class="brand-sub">bepainless.pl</div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <h1>Polityka prywatności</h1>
+    <div class="meta">
+      <span>wersja: <b>3.0</b></span>
+      <span>obowiązuje od: <b>21.10.2026</b></span>
+      <span>dotyczy: <b>aplikacji Painless</b></span>
+    </div>
+    <p class="lead">Painless to aplikacja, w której rozmawiasz z asystentem AI o dolegliwościach bólowych, prowadzisz dziennik i ćwiczysz według planu. Opisy dolegliwości, wpisy w dzienniku i plany to dane dotyczące zdrowia - traktujemy je z najwyższą ostrożnością. Ta polityka wyjaśnia prostym językiem: jakie dane zbieramy, po co, komu je powierzamy, jak długo je trzymamy i jak możesz je w każdej chwili usunąć.</p>
+  </div>
+
+  <nav class="toc" aria-label="Spis treści">
+    <p>Spis treści</p>
+    <ol>
+      <li><a href="#s01">Kto odpowiada za Twoje dane</a></li>
+      <li><a href="#s02">Jakie dane zbieramy</a></li>
+      <li><a href="#s03">Po co i na jakiej podstawie przetwarzamy dane</a></li>
+      <li><a href="#s04">Sztuczna inteligencja i automatyczne przetwarzanie</a></li>
+      <li><a href="#s05">Komu powierzamy dane</a></li>
+      <li><a href="#s06">Przekazywanie danych poza Europejski Obszar Gospodarczy</a></li>
+      <li><a href="#s07">Jak długo przechowujemy dane</a></li>
+      <li><a href="#s08">Pamięć Twojego urządzenia (ciasteczka i podobne)</a></li>
+      <li><a href="#s09">Twoje prawa - w tym usunięcie konta</a></li>
+      <li><a href="#s10">Jak chronimy Twoje dane</a></li>
+      <li><a href="#s11">Wiek użytkowników</a></li>
+      <li><a href="#s12">Zmiany tej polityki</a></li>
+      <li><a href="#s13">Kontakt</a></li>
+    </ol>
+  </nav>
+
+<section>
+<h2 id="s01"><span class="num">01</span>Kto odpowiada za Twoje dane</h2>
+<p><strong>Dane związane z korzystaniem z aplikacji</strong> (konto, rozmowy, plany, dziennik, analityka): administratorami są współadministratorzy w rozumieniu art. 26 RODO: 1) Jędrzej Wąsik, 2) Borys Płachno, 3) Kamil Proske, wspólnie realizujący projekt „Painless”. Zawarli porozumienie, zgodnie z którym wspólnie określają cele i sposoby przetwarzania i odpowiadają za obowiązki z RODO wspólnie i w równym stopniu. Wszystkie Twoje żądania obsługujemy przez jeden punkt kontaktowy (poniżej), ale możesz wykonywać swoje prawa wobec każdego z nas. Zasadniczą treść porozumienia udostępnimy Ci na żądanie.</p>
+<p><strong>Dane związane z zakupem Painless Premium</strong> (płatności, faktury, rozliczenia podatkowe, reklamacje i odstąpienia od umowy): administratorem jest sprzedawca - Jędrzej Wąsik, prowadzący działalność gospodarczą pod firmą Jędrzej Wąsik Fizjoterapia, NIP 6381868571, adres do doręczeń: ul. Karola Szymanowskiego 23/3, 43-200 Pszczyna.</p>
+<p><strong>Kontakt we wszystkich sprawach dotyczących danych:</strong> <a href="mailto:movepainless@gmail.com">movepainless@gmail.com</a>.</p>
+<p>Jeśli projekt przejmie spółka, stanie się ona administratorem danych - zaktualizujemy wtedy tę politykę i poinformujemy Cię o zmianie, zanim nastąpi.</p>
+</section>
+<section>
+<h2 id="s02"><span class="num">02</span>Jakie dane zbieramy</h2>
+<div class="tw"><table>
+<thead>
+<tr class="header">
+<th>Rodzaj danych</th>
+<th>Co dokładnie</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Dane konta</td>
+<td>imię (lub pseudonim) i adres e-mail; logowanie kodem wysyłanym na e-mail, bez hasła</td>
+</tr>
+<tr class="even">
+<td>Rozmowy z asystentem</td>
+<td>treść wiadomości, w tym opisy dolegliwości - <strong>dane dotyczące zdrowia</strong> (art. 9 RODO)</td>
+</tr>
+<tr class="odd">
+<td>Plany ćwiczeń</td>
+<td>plany i ich etapy przygotowane w rozmowie, nazwy planów, harmonogram - <strong>dane dotyczące zdrowia</strong></td>
+</tr>
+<tr class="even">
+<td>Dziennik</td>
+<td>data wpisu, obszary zaznaczone na sylwetce, natężenie odczuwanego dyskomfortu, notatki, informacja, czy danego dnia ćwiczyłeś/aś - <strong>dane dotyczące zdrowia</strong></td>
+</tr>
+<tr class="odd">
+<td>Podsumowania (Premium)</td>
+<td>podsumowania tygodnia i miesiąca tworzone z danych z dziennika i planów - <strong>dane dotyczące zdrowia</strong></td>
+</tr>
+<tr class="even">
+<td>Ćwiczenia od fizjoterapeuty</td>
+<td>nazwa ćwiczenia, liczba serii i powtórzeń, kolejność, techniczny identyfikator nagrania. <strong>Same nagrania wideo zapisujemy wyłącznie na Twoim urządzeniu</strong> - nigdy nie trafiają na nasze serwery</td>
+</tr>
+<tr class="odd">
+<td>Przypomnienia</td>
+<td>wybrane dni i godziny, techniczny adres subskrypcji powiadomień Twojej przeglądarki, rodzaj urządzenia (iOS / Android / komputer). Treść powiadomień jest neutralna - nie zawiera nazw dolegliwości ani ćwiczeń</td>
+</tr>
+<tr class="even">
+<td>Wydruk dla fizjoterapeuty (Premium)</td>
+<td>gdy udostępnisz link: kopia danych do wydruku z ostatnich 14 dni (wykresy natężenia, obszary, regularność; bez Twoich notatek) oraz data wygaśnięcia linku</td>
+</tr>
+<tr class="odd">
+<td>Premium i płatności</td>
+<td>status subskrypcji, wybrany okres, data końca okresu, identyfikatory klienta i subskrypcji u operatora płatności. <strong>Danych karty nie widzimy</strong> - obsługuje je operator płatności</td>
+</tr>
+<tr class="even">
+<td>Dane do faktury</td>
+<td>gdy poprosisz o fakturę: imię i nazwisko lub firma, adres, ewentualnie NIP</td>
+</tr>
+<tr class="odd">
+<td>Zgody</td>
+<td>informacja o wyrażonych zgodach i oświadczeniu o wieku, data i wersja ich treści</td>
+</tr>
+<tr class="even">
+<td>Korespondencja</td>
+<td>treść wiadomości do nas, w tym reklamacji i oświadczeń o odstąpieniu od umowy</td>
+</tr>
+<tr class="odd">
+<td>Dane techniczne</td>
+<td>np. data założenia konta, identyfikatory sesji logowania, logi błędów</td>
+</tr>
+<tr class="even">
+<td>Analityka</td>
+<td>pseudonimowe zdarzenia opisujące korzystanie z aplikacji (np. „zalogowano się”, „rozpoczęto płatność”) - <strong>bez treści rozmów i bez danych o zdrowiu</strong>, adres IP i podstawowe informacje o przeglądarce i urządzeniu</td>
+</tr>
+<tr class="odd">
+<td>Opinie anonimowe</td>
+<td>powód usunięcia konta i ankiety - zapisywane bez powiązania z Tobą</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Świadomie nie zbieramy:</strong> danych o lokalizacji, danych z innych aplikacji, numeru PESEL. Nie nagrywamy Twojej aktywności na ekranie i nie śledzimy Cię poza aplikacją.</p>
+</section>
+<section>
+<h2 id="s03"><span class="num">03</span>Po co i na jakiej podstawie przetwarzamy dane</h2>
+<div class="tw"><table>
+<thead>
+<tr class="header">
+<th>Cel</th>
+<th>Podstawa prawna</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Rozmowa z asystentem, plany, dziennik, podsumowania, wydruk - wszystko, co dotyczy Twoich dolegliwości</td>
+<td>Twoja <strong>wyraźna zgoda</strong> na przetwarzanie danych o zdrowiu (art. 9 ust. 2 lit. a RODO) oraz umowa (art. 6 ust. 1 lit. b RODO). Bez tej zgody rozmowa z asystentem i funkcje z niej wynikające są niedostępne</td>
+</tr>
+<tr class="even">
+<td>Założenie i obsługa konta, logowanie, przypomnienia, Painless Free</td>
+<td>wykonanie umowy (art. 6 ust. 1 lit. b RODO)</td>
+</tr>
+<tr class="odd">
+<td>Sprzedaż i obsługa Painless Premium: płatność, odnowienia, rezygnacja, potwierdzenia</td>
+<td>wykonanie umowy (art. 6 ust. 1 lit. b RODO)</td>
+</tr>
+<tr class="even">
+<td>Faktury, księgowość i rozliczenia podatkowe</td>
+<td>obowiązek prawny (art. 6 ust. 1 lit. c RODO w zw. z ustawą o VAT, Ordynacją podatkową i ustawą o rachunkowości / przepisami o PIT)</td>
+</tr>
+<tr class="odd">
+<td>Reklamacje i odstąpienia od umowy</td>
+<td>obowiązek prawny (art. 6 ust. 1 lit. c RODO w zw. z ustawą o prawach konsumenta)</td>
+</tr>
+<tr class="even">
+<td>Wykazanie zgód, obrona przed roszczeniami</td>
+<td>obowiązek prawny (art. 7 ust. 1 i art. 5 ust. 2 RODO) oraz nasz prawnie uzasadniony interes (art. 6 ust. 1 lit. f RODO)</td>
+</tr>
+<tr class="odd">
+<td>Bezpieczeństwo i rozwiązywanie problemów technicznych, zapobieganie nadużyciom (w tym uczciwe korzystanie z Premium)</td>
+<td>nasz prawnie uzasadniony interes (art. 6 ust. 1 lit. f RODO)</td>
+</tr>
+<tr class="even">
+<td>Analiza korzystania z aplikacji i jej rozwój</td>
+<td>nasz prawnie uzasadniony interes - ulepszanie produktu (art. 6 ust. 1 lit. f RODO); możesz wnieść sprzeciw</td>
+</tr>
+<tr class="odd">
+<td>Rozwój produktu na podstawie anonimowych opinii</td>
+<td>dane anonimowe nie są danymi osobowymi</td>
+</tr>
+</tbody>
+</table></div>
+<p>Podanie danych jest dobrowolne, ale bez imienia i adresu e-mail nie założysz konta, a bez zgody na przetwarzanie danych o zdrowiu nie skorzystasz z rozmowy z asystentem.</p>
+<div class="note"><p><strong>Ważne:</strong> Asystent udziela wskazówek o charakterze edukacyjnym. Odpowiedzi, plany i podsumowania są generowane automatycznie przez sztuczną inteligencję i mogą zawierać błędy. Asystent nie stawia diagnoz, nie zaleca leków i nie zastępuje konsultacji lekarskiej ani fizjoterapeutycznej. W razie nagłych lub niepokojących objawów skontaktuj się z lekarzem, a w sytuacji zagrożenia życia zadzwoń pod 112.</p></div>
+</section>
+<section>
+<h2 id="s04"><span class="num">04</span>Sztuczna inteligencja i automatyczne przetwarzanie</h2>
+<p>Odpowiedzi asystenta, plany ćwiczeń oraz wnioski w podsumowaniach tygodnia i miesiąca tworzy model AI firmy Anthropic. Do modelu wysyłamy treść rozmowy, a przy podsumowaniach - zestawienie Twoich wpisów (bez notatek). Nie podejmujemy wobec Ciebie decyzji opartych wyłącznie na automatycznym przetwarzaniu, które wywoływałyby skutki prawne lub w podobny sposób istotnie na Ciebie wpływały (art. 22 RODO): asystent daje wskazówki, a decyzję zawsze podejmujesz Ty. Zgodnie z warunkami handlowymi Anthropic dane przesyłane przez nas do modelu nie są wykorzystywane do trenowania modeli.</p>
+</section>
+<section>
+<h2 id="s05"><span class="num">05</span>Komu powierzamy dane</h2>
+<p>Nie sprzedajemy Twoich danych i nie udostępniamy ich do celów reklamowych. Korzystamy z zaufanych dostawców (podmiotów przetwarzających), z którymi mamy umowy powierzenia:</p>
+<div class="tw"><table>
+<thead>
+<tr class="header">
+<th>Dostawca</th>
+<th>Co robi</th>
+<th>Jakie dane</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Anthropic PBC (USA)</td>
+<td>model AI generujący odpowiedzi, plany i wnioski w podsumowaniach</td>
+<td>treść rozmowy, zestawienia do podsumowań</td>
+</tr>
+<tr class="even">
+<td>Supabase</td>
+<td>baza danych i logowanie</td>
+<td>wszystkie dane konta i aplikacji</td>
+</tr>
+<tr class="odd">
+<td>Vercel</td>
+<td>hosting aplikacji</td>
+<td>dane przesyłane przez aplikację w trakcie działania</td>
+</tr>
+<tr class="even">
+<td>PostHog (instancja w UE)</td>
+<td>analityka produktowa</td>
+<td>pseudonimowe zdarzenia, IP, dane techniczne - bez danych o zdrowiu</td>
+</tr>
+<tr class="odd">
+<td>Resend</td>
+<td>wysyłka e-maili z kodem logowania i potwierdzeń zakupu</td>
+<td>adres e-mail, treść e-maila</td>
+</tr>
+<tr class="even">
+<td>Stripe Payments Europe, Limited (Irlandia)</td>
+<td>obsługa płatności i subskrypcji</td>
+<td>adres e-mail, dane płatności, kwoty, kraj, IP przy płatności - <strong>bez danych o zdrowiu</strong></td>
+</tr>
+<tr class="odd">
+<td>biuro rachunkowe sprzedawcy</td>
+<td>księgowość</td>
+<td>dane z faktur i rozliczeń</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Stripe</strong> w części działa jako nasz podmiot przetwarzający (obsługa płatności), a w części jako odrębny administrator - np. przy weryfikacji płatności, przeciwdziałaniu oszustwom i wykonywaniu własnych obowiązków prawnych instytucji płatniczej. Zasady Stripe: stripe.com/pl/privacy.</p>
+<p><strong>Usługi powiadomień:</strong> jeśli włączysz przypomnienia, powiadomienia dostarcza usługa powiadomień Twojej przeglądarki lub systemu (np. Apple, Google, Mozilla). Przekazujemy jej wyłącznie zaszyfrowaną, neutralną treść powiadomienia.</p>
+<p><strong>Fizjoterapeuta, któremu wyślesz link do wydruku,</strong> otrzymuje dane z wydruku, bo Ty mu je przekazujesz. Od momentu pobrania pliku sam odpowiada za te dane.</p>
+</section>
+<section>
+<h2 id="s06"><span class="num">06</span>Przekazywanie danych poza Europejski Obszar Gospodarczy</h2>
+<ul>
+<li><strong>Anthropic PBC (USA)</strong> - treść rozmów i zestawienia do podsumowań. Podstawa: standardowe klauzule umowne zatwierdzone przez Komisję Europejską (art. 46 ust. 2 lit. c RODO), włączone do umowy powierzenia.</li>
+<li><strong>Resend Inc. (USA)</strong> - adres e-mail i treść e-maili. Podstawa: standardowe klauzule umowne.</li>
+<li><strong>Stripe</strong> - dane płatności przetwarza Stripe Payments Europe w EOG; mogą być przekazywane do Stripe, Inc. w USA na podstawie decyzji Komisji o odpowiednim stopniu ochrony (EU-US Data Privacy Framework) i standardowych klauzul umownych.</li>
+<li><strong>Supabase</strong> - baza danych znajduje się w Londynie (Wielka Brytania), wobec której Komisja Europejska stwierdziła odpowiedni stopień ochrony danych (decyzja odnowiona w grudniu 2025 r.). Dostawca (Supabase, Inc.) ma siedzibę w USA - ewentualny dostęp z USA zabezpieczają standardowe klauzule umowne w umowie powierzenia.</li>
+<li><strong>Vercel (USA)</strong> - aplikacja działa na serwerach w Waszyngtonie (USA). Podstawa: decyzja Komisji o odpowiednim stopniu ochrony (Vercel ma certyfikat EU-US Data Privacy Framework).</li>
+<li><strong>PostHog</strong> - dane analityczne przetwarzamy w instancji w Unii Europejskiej.</li>
+</ul>
+<p>Kopię informacji o zabezpieczeniach udostępnimy Ci na żądanie (kontakt w sekcji 01).</p>
+</section>
+<section>
+<h2 id="s07"><span class="num">07</span>Jak długo przechowujemy dane</h2>
+<div class="tw"><table>
+<thead>
+<tr class="header">
+<th>Dane</th>
+<th>Jak długo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Konto, rozmowy, plany, dziennik, podsumowania, ćwiczenia, przypomnienia</td>
+<td>do usunięcia konta przez Ciebie (Ustawienia → „Usuń konto i statystyki”) lub na Twoje żądanie. Konta nieaktywne przez ponad 24 miesiące usuwamy wraz z danymi</td>
+</tr>
+<tr class="even">
+<td>Nagrania ćwiczeń</td>
+<td>tylko na Twoim urządzeniu - usuwasz je sam/a (albo znikają po wyczyszczeniu danych przeglądarki)</td>
+</tr>
+<tr class="odd">
+<td>Dane ponad limit Free po zakończeniu Premium</td>
+<td>nie usuwamy ich - są ukryte do ponownego wykupienia Premium albo do usunięcia konta</td>
+</tr>
+<tr class="even">
+<td>Link do wydruku</td>
+<td>14 dni od utworzenia albo do wcześniejszego wyłączenia przez Ciebie, potem kopia danych jest automatycznie usuwana</td>
+</tr>
+<tr class="odd">
+<td>Status subskrypcji w aplikacji</td>
+<td>do usunięcia konta</td>
+</tr>
+<tr class="even">
+<td>Dane rozliczeniowe (u operatora płatności i w księgowości: transakcje, faktury)</td>
+<td>5 lat od końca roku, w którym upłynął termin płatności podatku - tak długo wymagają tego przepisy podatkowe. Nie da się ich usunąć wcześniej, także po usunięciu konta</td>
+</tr>
+<tr class="odd">
+<td>Reklamacje, odstąpienia, korespondencja</td>
+<td>do zakończenia sprawy, a potem do upływu terminu przedawnienia roszczeń</td>
+</tr>
+<tr class="even">
+<td>Zgody</td>
+<td>przez czas korzystania z aplikacji, a po usunięciu konta przez okres potrzebny do wykazania, że przetwarzanie było zgodne z prawem, i obrony przed roszczeniami</td>
+</tr>
+<tr class="odd">
+<td>Kopie zapasowe</td>
+<td>do 30 dni, potem są trwale usuwane</td>
+</tr>
+<tr class="even">
+<td>Analityka</td>
+<td>nie dłużej niż 12 miesięcy</td>
+</tr>
+<tr class="odd">
+<td>Opinie anonimowe</td>
+<td>bezterminowo - nie da się ich powiązać z Tobą</td>
+</tr>
+</tbody>
+</table></div>
+</section>
+<section>
+<h2 id="s08"><span class="num">08</span>Pamięć Twojego urządzenia (ciasteczka i podobne)</h2>
+<p>Painless zapisuje na Twoim urządzeniu tylko to, co jest niezbędne do działania usługi, o którą prosisz:</p>
+<ul>
+<li><strong>sesja logowania</strong> - żebyś nie musiał/a logować się przy każdym otwarciu;</li>
+<li><strong>nagrania ćwiczeń</strong> - w pamięci przeglądarki (IndexedDB), bo nie trzymamy ich na serwerach;</li>
+<li><strong>subskrypcja powiadomień</strong> - jeśli włączysz przypomnienia;</li>
+<li><strong>ustawienia działania aplikacji</strong> - np. stan minutnika.</li>
+</ul>
+<p>Narzędzie analityczne (PostHog) nie zapisuje niczego na Twoim urządzeniu. Nie używamy ciasteczek reklamowych ani śledzących.</p>
+</section>
+<section>
+<h2 id="s09"><span class="num">09</span>Twoje prawa - w tym usunięcie konta</h2>
+<p>Masz prawo do:</p>
+<ul>
+<li><strong>usunięcia danych</strong> - najszybciej samodzielnie: Ustawienia → „Usuń konto i statystyki”. To nieodwracalnie kasuje konto i wszystkie dane w aplikacji oraz anuluje subskrypcję Premium. Dane rozliczeniowe zostają u operatora płatności i w księgowości przez okres wymagany prawem (sekcja 07);</li>
+<li>dostępu do danych i otrzymania ich kopii;</li>
+<li>sprostowania (poprawienia) danych;</li>
+<li>ograniczenia przetwarzania;</li>
+<li>sprzeciwu wobec przetwarzania opartego na naszym prawnie uzasadnionym interesie, w tym wobec analityki;</li>
+<li>przenoszenia danych;</li>
+<li><strong>cofnięcia zgody</strong> na przetwarzanie danych o zdrowiu w dowolnym momencie - nie wpływa to na zgodność z prawem przetwarzania sprzed cofnięcia. Bez zgody nie można korzystać z rozmowy z asystentem; jeśli masz Premium, możesz wtedy zakończyć umowę na zasadach z regulaminu;</li>
+<li>skargi do Prezesa Urzędu Ochrony Danych Osobowych (ul. Stawki 2, 00-193 Warszawa, uodo.gov.pl).</li>
+</ul>
+<p>W sprawach, których nie obsługuje sama aplikacja, napisz na <a href="mailto:movepainless@gmail.com">movepainless@gmail.com</a>. Odpowiadamy najpóźniej w ciągu miesiąca.</p>
+<p>Anonimowych opinii nie jesteśmy w stanie usunąć na Twoje żądanie, bo nie wiemy, które pochodzą od Ciebie - na tym polega ich anonimowość.</p>
+</section>
+<section>
+<h2 id="s10"><span class="num">10</span>Jak chronimy Twoje dane</h2>
+<ul>
+<li>Połączenie z aplikacją jest szyfrowane (HTTPS).</li>
+<li>Każdy użytkownik ma techniczny dostęp wyłącznie do własnych danych - reguły dostępu są egzekwowane w bazie danych.</li>
+<li>Rozmowa z asystentem jest możliwa dopiero po wyrażeniu zgód - blokada działa po stronie serwera.</li>
+<li>Klucze dostępowe do usług przechowujemy wyłącznie po stronie serwera.</li>
+<li>Logowanie bez hasła (kod jednorazowy) eliminuje ryzyko wycieku haseł.</li>
+<li>Link do wydruku zawiera losowy, długi klucz; w bazie przechowujemy tylko jego skrót. Link wygasa po 14 dniach i możesz go wyłączyć w każdej chwili. <strong>Uwaga:</strong> otworzy go każdy, kto go dostanie - wysyłaj go tylko zaufanej osobie.</li>
+<li>Do operatora płatności, narzędzia analitycznego i powiadomień nie trafiają dane o zdrowiu.</li>
+</ul>
+</section>
+<section>
+<h2 id="s11"><span class="num">11</span>Wiek użytkowników</h2>
+<p>Aplikacja jest przeznaczona dla osób, które ukończyły 18 lat. Jeśli dowiemy się, że przetwarzamy dane osoby młodszej, usuniemy je.</p>
+</section>
+<section>
+<h2 id="s12"><span class="num">12</span>Zmiany tej polityki</h2>
+<p>O istotnych zmianach poinformujemy Cię e-mailem i w aplikacji, zanim zaczną obowiązywać. Aktualna wersja jest zawsze dostępna pod tym adresem, z numerem wersji i datą.</p>
+</section>
+<section>
+<h2 id="s13"><span class="num">13</span>Kontakt</h2>
+<p>Pytania o Twoje dane lub tę politykę: <a href="mailto:movepainless@gmail.com">movepainless@gmail.com</a>. Zasady korzystania z aplikacji i zakupu Premium opisuje <a href="https://bigjpainless.github.io/painless-polityka-prywatno-ci/regulamin.html">Regulamin</a>.</p>
+</section>
+</main>
+
+<footer class="wrap">
+  <span>Painless — polityka prywatności, wersja 3.0</span>
+  <span>movepainless@gmail.com</span>
+</footer>
+
+</body>
+</html>
