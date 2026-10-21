@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Regulamin — Painless</title>
+<meta name="description" content="Regulamin aplikacji Painless.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Inter:wght@400;600&family=Space+Mono&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green:#4CAF1E;
+    --green-dark:#3A8A15;
+    --ink:#1C2318;
+    --ink-soft:#4A5544;
+    --paper:#FAFBF7;
+    --card:#FFFFFF;
+    --line:#E3E9DD;
+    --mono:'Space Mono',monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+  body{
+    font-family:'Inter',system-ui,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.65;
+    font-size:16px;
+  }
+  .wrap{max-width:720px;margin:0 auto;padding:0 20px}
+
+  header{
+    border-bottom:1px solid var(--line);
+    padding:28px 0 24px;
+  }
+  .brand{display:flex;align-items:center;gap:12px}
+  .blob{width:44px;height:44px;flex:none}
+  .brand-name{
+    font-family:'Bricolage Grotesque',sans-serif;
+    font-weight:700;font-size:1.35rem;letter-spacing:-0.01em;
+  }
+  .brand-sub{font-family:var(--mono);font-size:.72rem;color:var(--ink-soft)}
+
+  .hero{padding:44px 0 8px}
+  h1{
+    font-family:'Bricolage Grotesque',sans-serif;
+    font-weight:700;font-size:clamp(1.9rem,5vw,2.6rem);
+    letter-spacing:-0.02em;line-height:1.15;
+  }
+  .meta{
+    font-family:var(--mono);font-size:.78rem;color:var(--ink-soft);
+    margin-top:14px;display:flex;gap:18px;flex-wrap:wrap;
+  }
+  .meta b{color:var(--green-dark);font-weight:400}
+
+  .lead{
+    margin:26px 0 0;padding:18px 20px;
+    background:var(--card);border:1px solid var(--line);border-left:4px solid var(--green);
+    border-radius:10px;color:var(--ink-soft);font-size:.95rem;
+  }
+
+  nav.toc{margin:36px 0 8px}
+  nav.toc p{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--ink-soft);margin-bottom:10px}
+  nav.toc ol{list-style:none;counter-reset:toc}
+  nav.toc li{counter-increment:toc;border-bottom:1px dashed var(--line)}
+  nav.toc a{
+    display:flex;gap:14px;align-items:baseline;
+    padding:9px 2px;color:var(--ink);text-decoration:none;font-size:.94rem;
+  }
+  nav.toc a::before{
+    content:counter(toc,decimal-leading-zero);
+    font-family:var(--mono);font-size:.75rem;color:var(--green-dark);
+  }
+  nav.toc a:hover,nav.toc a:focus-visible{color:var(--green-dark)}
+  a:focus-visible{outline:2px solid var(--green);outline-offset:3px;border-radius:3px}
+
+  main{padding-bottom:60px}
+  section{margin-top:48px}
+  h2{
+    font-family:'Bricolage Grotesque',sans-serif;
+    font-weight:700;font-size:1.32rem;letter-spacing:-0.01em;
+    display:flex;gap:12px;align-items:baseline;
+    scroll-margin-top:24px;
+  }
+  h2 .num{font-family:var(--mono);font-weight:400;font-size:.8rem;color:var(--green-dark)}
+  section>p, section>ul, section>ol{margin-top:14px}
+  section p+p{margin-top:12px}
+  ul,ol{padding-left:22px}
+  li{margin-top:7px}
+  li::marker{color:var(--green-dark)}
+  strong{font-weight:600}
+  a{color:var(--green-dark)}
+
+  .table{
+    margin-top:16px;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--card);
+  }
+  .row{display:grid;grid-template-columns:1fr 1.6fr;border-top:1px solid var(--line)}
+  .row:first-child{border-top:none}
+  .row>div{padding:12px 16px;font-size:.93rem}
+  .row>div:first-child{
+    background:#F3F7EF;font-weight:600;border-right:1px solid var(--line);
+  }
+  @media(max-width:540px){
+    .row{grid-template-columns:1fr}
+    .row>div:first-child{border-right:none;border-bottom:1px dashed var(--line)}
+  }
+
+  .note{
+    margin-top:16px;padding:14px 16px;border-radius:10px;
+    background:#F3F7EF;border:1px solid #D6E4CC;font-size:.92rem;color:var(--ink-soft);
+  }
+  .alert{
+    margin-top:16px;padding:16px 18px;border-radius:10px;
+    background:#FFF8E8;border:1px solid #E8D9A8;font-size:.95rem;color:var(--ink);
+  }
+
+  footer{
+    border-top:1px solid var(--line);
+    padding:26px 0 44px;
+    font-family:var(--mono);font-size:.75rem;color:var(--ink-soft);
+    display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  }
+
+  .tw{margin-top:16px;overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+  .tw table{border-collapse:collapse;width:100%;font-size:.9rem}
+  .tw th,.tw td{padding:10px 14px;text-align:left;vertical-align:top;border-top:1px solid var(--line)}
+  .tw thead th{background:#F3F7EF;font-weight:600;border-top:none}
+  .tw tbody tr:first-child td{border-top:none}
+  .tw thead:empty,.tw thead tr:empty{display:none}
+  .tw td:first-child{font-weight:600}
+  .note p+p{margin-top:8px}
+  .note ul{margin-top:8px}
+  @media(max-width:540px){.tw th,.tw td{padding:8px 7px;font-size:.8rem;hyphens:auto}.tw table{font-size:.8rem}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap brand">
+    <svg class="blob" viewBox="0 0 100 100" aria-hidden="true">
+      <path fill="#4CAF1E" d="M50 4c14 0 27 6 35 16s11 24 8 37-12 24-24 30-27 7-38 1S12 70 9 57 10 29 20 18 36 4 50 4z"/>
+      <path d="M36 40q6-7 12-1M56 40q6-7 12-1M38 62q13 9 26 0" fill="none" stroke="#1C2318" stroke-width="4" stroke-linecap="round"/>
+    </svg>
+    <div>
+      <div class="brand-name">Painless</div>
+      <div class="brand-sub">bepainless.pl</div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <h1>Regulamin</h1>
+    <div class="meta">
+      <span>wersja: <b>2.0</b></span>
+      <span>obowiązuje od: <b>21.10.2026</b></span>
+      <span>dotyczy: <b>aplikacji Painless</b></span>
+    </div>
+    <p class="lead">Painless ma wersję bezpłatną i płatną (Painless Premium). Ten regulamin wyjaśnia prostym językiem, czym jest aplikacja, a czym nie jest, kto ją prowadzi, co dostajesz za darmo, co w Premium, jak płacisz, jak zrezygnować, odstąpić od umowy i złożyć reklamację. Najważniejsza jest sekcja 03: opisuje, gdzie leżą granice tego, co Painless może dla Ciebie zrobić.</p>
+  </div>
+
+  <nav class="toc" aria-label="Spis treści">
+    <p>Spis treści</p>
+    <ol>
+      <li><a href="#s01">Kto świadczy usługę</a></li>
+      <li><a href="#s02">Najważniejsze pojęcia</a></li>
+      <li><a href="#s03">Czym jest Painless, a czym nie jest</a></li>
+      <li><a href="#s04">Kto może korzystać z aplikacji</a></li>
+      <li><a href="#s05">Konto i umowa o Painless Free</a></li>
+      <li><a href="#s06">Co dostajesz w Free, a co w Premium</a></li>
+      <li><a href="#s07">Painless Premium: zakup i płatność</a></li>
+      <li><a href="#s08">Odnawianie, rezygnacja i koniec Premium</a></li>
+      <li><a href="#s09">Zmiana ceny</a></li>
+      <li><a href="#s10">Prawo odstąpienia od umowy (konsumenci)</a></li>
+      <li><a href="#s11">Uczciwe korzystanie z Premium</a></li>
+      <li><a href="#s12">Zasady korzystania</a></li>
+      <li><a href="#s13">Wymagania techniczne</a></li>
+      <li><a href="#s14">Reklamacje</a></li>
+      <li><a href="#s15">Odpowiedzialność</a></li>
+      <li><a href="#s16">Dostępność i zakończenie działania</a></li>
+      <li><a href="#s17">Twoje dane osobowe</a></li>
+      <li><a href="#s18">Zmiany regulaminu</a></li>
+      <li><a href="#s19">Postanowienia końcowe</a></li>
+      <li><a href="#z19">Załącznik nr 1 Wzór formularza odstąpienia od umowy</a></li>
+    </ol>
+  </nav>
+
+<section>
+<h2 id="s01"><span class="num">01</span>Kto świadczy usługę</h2>
+<p>Usługę świadczy i Painless Premium sprzedaje:</p>
+<div class="tw"><table>
+<tbody>
+<tr class="odd">
+<td>Usługodawca</td>
+<td>Jędrzej Wąsik, prowadzący działalność gospodarczą pod firmą <strong>Jędrzej Wąsik Fizjoterapia</strong></td>
+</tr>
+<tr class="even">
+<td>NIP</td>
+<td>6381868571</td>
+</tr>
+<tr class="odd">
+<td>Adres do doręczeń</td>
+<td>ul. Karola Szymanowskiego 23/3, 43-200 Pszczyna</td>
+</tr>
+<tr class="even">
+<td>E-mail (kontakt, reklamacje, odstąpienie)</td>
+<td><a href="mailto:movepainless@gmail.com">movepainless@gmail.com</a></td>
+</tr>
+</tbody>
+</table></div>
+<p>Dalej piszemy o usługodawcy „my”. Painless tworzą wspólnie Jędrzej Wąsik, Kamil Proske i Borys Płachno. Stroną umowy z Tobą, również umowy o Painless Premium, jest usługodawca wskazany wyżej. Kto odpowiada za Twoje dane osobowe, opisuje Polityka prywatności.</p>
+<p>Jeśli w przyszłości Painless przejmie spółka, poinformujemy Cię o tym z wyprzedzeniem i zaktualizujemy regulamin.</p>
+</section>
+<section>
+<h2 id="s02"><span class="num">02</span>Najważniejsze pojęcia</h2>
+<ul>
+<li><strong>Painless (aplikacja)</strong> - aplikacja internetowa dostępna pod adresem bepainless.pl, także po dodaniu do ekranu głównego telefonu.</li>
+<li><strong>Konto</strong> - Twoje konto w Painless, zakładane adresem e-mail.</li>
+<li><strong>Painless Free</strong> - bezpłatna wersja aplikacji, z limitami opisanymi w sekcji 06.</li>
+<li><strong>Painless Premium</strong> - płatna subskrypcja z dodatkowymi funkcjami (sekcja 06), na okres miesięczny albo kwartalny.</li>
+<li><strong>Okres rozliczeniowy</strong> - miesiąc albo trzy miesiące (kwartał), liczone od dnia zakupu lub ostatniego odnowienia.</li>
+<li><strong>Operator płatności</strong> - Stripe Payments Europe, Limited (Irlandia), który przyjmuje płatności w naszym imieniu.</li>
+<li><strong>Konsument</strong> - osoba fizyczna, która kupuje Premium dla siebie, niezwiązanie z działalnością gospodarczą. Uprawnienia konsumenta z tego regulaminu przysługują też osobie prowadzącej jednoosobową działalność, jeśli umowa nie ma dla niej charakteru zawodowego (art. 38a ustawy o prawach konsumenta).</li>
+</ul>
+</section>
+<section>
+<h2 id="s03"><span class="num">03</span>Czym jest Painless, a czym nie jest</h2>
+<p>Painless to aplikacja edukacyjna. Rozmawiasz w niej z asystentem o dolegliwościach bólowych układu ruchu i otrzymujesz ogólne wskazówki: przykładowe ćwiczenia, podpowiedzi dotyczące codziennych nawyków oraz informacje o tym, kiedy warto zgłosić się do specjalisty. Możesz też prowadzić dziennik odczuwanego dyskomfortu i regularności ćwiczeń.</p>
+<p>Trzy rzeczy, o których musisz wiedzieć, zanim zaczniesz:</p>
+<ul>
+<li><strong>Rozmawiasz ze sztuczną inteligencją, nie z człowiekiem.</strong> Odpowiedzi, plany oraz podsumowania tygodnia i miesiąca powstają automatycznie i mogą zawierać błędy lub nieścisłości. Żaden fizjoterapeuta nie czyta Twoich wiadomości ani na nie nie odpowiada.</li>
+<li><strong>Painless nie stawia diagnoz, nie prowadzi leczenia i nie zaleca leków.</strong> Nie zastępuje wizyty u lekarza ani u fizjoterapeuty. Podsumowania i wydruk dla fizjoterapeuty zestawiają wyłącznie dane, które sam zapisałeś/aś, bez oceny Twojego stanu zdrowia.</li>
+<li><strong>Nie podejmuj decyzji dotyczących zdrowia wyłącznie na podstawie tego, co powie aplikacja.</strong> Jeśli objawy są nagłe, nasilają się lub Cię niepokoją, skontaktuj się z lekarzem. W sytuacji zagrożenia życia zadzwoń pod 112.</li>
+</ul>
+<div class="note"><p>Jeśli w rozmowie pojawią się objawy, które wymagają pilnej konsultacji lekarskiej, asystent przerwie udzielanie wskazówek i poprosi Cię o kontakt ze specjalistą. Do czasu wyjaśnienia sytuacji aplikacja wstrzymuje wtedy plany ćwiczeń, podsumowania, wydruk i przypomnienia - także w Premium. To nie jest formalność, tylko najważniejsza funkcja bezpieczeństwa tej aplikacji (więcej w sekcji 08).</p></div>
+<p>Painless nie jest wyrobem medycznym i nie służy do diagnozowania, monitorowania ani leczenia jakiejkolwiek choroby.</p>
+</section>
+<section>
+<h2 id="s04"><span class="num">04</span>Kto może korzystać z aplikacji</h2>
+<p>Painless jest przeznaczony wyłącznie dla osób pełnoletnich, które ukończyły 18 lat. Przy zakładaniu konta potwierdzasz swój wiek. Jeśli nie masz ukończonych 18 lat, nie korzystaj z aplikacji. Jeśli dowiemy się, że konto należy do osoby niepełnoletniej, usuniemy je wraz z danymi, a ewentualną opłatę za Premium zwrócimy w całości.</p>
+<p>Painless Premium sprzedajemy osobom w Polsce, w złotych polskich.</p>
+</section>
+<section>
+<h2 id="s05"><span class="num">05</span>Konto i umowa o Painless Free</h2>
+<p>Umowa o korzystanie z Painless Free zostaje zawarta w chwili, gdy zakładasz konto: podajesz imię i adres e-mail, akceptujesz ten regulamin, wyrażasz zgodę na przetwarzanie danych o zdrowiu i potwierdzasz wiek. Logowanie odbywa się kodem wysyłanym na Twój adres e-mail - nie ustawiasz hasła. Umowa jest bezpłatna i zawarta na czas nieokreślony.</p>
+<p>Umowę możesz rozwiązać w każdej chwili i bez podania powodu: wystarczy przycisk „Usuń konto i statystyki” w Ustawieniach albo wiadomość na adres z sekcji 01. Konto i Twoje dane zostają wtedy usunięte (szczegóły w Polityce prywatności). Usunięcie konta automatycznie anuluje subskrypcję Premium - patrz sekcja 08.</p>
+<p>My możemy rozwiązać umowę, jeśli rażąco naruszysz zasady z sekcji 12 albo jeśli zakończymy działanie aplikacji (sekcja 16). Uprzedzimy Cię e-mailem, chyba że naruszenie wymaga natychmiastowej reakcji.</p>
+</section>
+<section>
+<h2 id="s06"><span class="num">06</span>Co dostajesz w Free, a co w Premium</h2>
+<div class="tw"><table>
+<thead>
+<tr class="header">
+<th>Funkcja</th>
+<th>Painless Free</th>
+<th>Painless Premium</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Rozmowa z asystentem</td>
+<td>do 15 wiadomości dziennie i 45 w miesiącu kalendarzowym</td>
+<td>bez stałego limitu, w ramach uczciwego korzystania (sekcja 11)</td>
+</tr>
+<tr class="even">
+<td>Plany ćwiczeń</td>
+<td>1 aktywny plan; nowy plan po 7 dniach</td>
+<td>do 3 planów jednocześnie, zmiany w trakcie, kolejne etapy</td>
+</tr>
+<tr class="odd">
+<td>Podsumowanie tygodnia i zakładka „Efekty”</td>
+<td>- (wykresy w Historii)</td>
+<td>tak, z omówieniem w czacie</td>
+</tr>
+<tr class="even">
+<td>Plan na utrzymanie, gdy dyskomfort minie</td>
+<td>-</td>
+<td>tak, z podsumowaniem miesiąca</td>
+</tr>
+<tr class="odd">
+<td>Wydruk dla fizjoterapeuty (PDF i link)</td>
+<td>-</td>
+<td>tak (ostatnie 14 dni)</td>
+</tr>
+<tr class="even">
+<td>Obszary w dzienniku</td>
+<td>1 na dzień</td>
+<td>do 5 na dzień</td>
+</tr>
+<tr class="odd">
+<td>Historia w dzienniku</td>
+<td>ostatnie 30 dni</td>
+<td>cały okres</td>
+</tr>
+<tr class="even">
+<td>Mapa ciepła</td>
+<td>-</td>
+<td>tak (ostatnie 14 dni)</td>
+</tr>
+<tr class="odd">
+<td>Nagrania ćwiczeń od fizjoterapeuty</td>
+<td>do 3</td>
+<td>bez stałego limitu</td>
+</tr>
+<tr class="even">
+<td>Przypomnienia o ćwiczeniach</td>
+<td>tak</td>
+<td>tak</td>
+</tr>
+</tbody>
+</table></div>
+<p>Dni i miesiące liczymy według czasu polskiego. Rozmowę o objawach, które mogą wymagać konsultacji lekarskiej, możesz dokończyć także po wyczerpaniu limitu wiadomości (w rozsądnym zakresie, kilka dodatkowych wiadomości) - limit nigdy nie przerywa tej części rozmowy.</p>
+<p>Nagrania ćwiczeń są zapisywane wyłącznie w pamięci Twojego urządzenia, nie na naszych serwerach. Jeśli zmienisz telefon, wyczyścisz dane przeglądarki albo usuniesz aplikację z ekranu, nagrania mogą zostać utracone i nie jesteśmy w stanie ich odtworzyć.</p>
+<p>Zakres funkcji możemy rozwijać. Nie ograniczymy funkcji Premium w trakcie opłaconego okresu rozliczeniowego; zmiany zakresu wersji Free lub Premium wprowadzamy w trybie z sekcji 18.</p>
+</section>
+<section>
+<h2 id="s07"><span class="num">07</span>Painless Premium: zakup i płatność</h2>
+<p><strong>Ceny</strong> (ceny końcowe, które płacisz):</p>
+<ul>
+<li><strong>29 zł</strong> za okres miesięczny,</li>
+<li><strong>69 zł</strong> za okres kwartalny (3 miesiące).</li>
+</ul>
+<p><strong>Jak kupujesz:</strong></p>
+<ol type="1">
+<li>W aplikacji wybierasz okres (miesięczny albo kwartalny) i zapoznajesz się z podsumowaniem warunków.</li>
+<li>Zaznaczasz, czy chcesz, żeby Premium zaczęło działać od razu, jeszcze przed upływem 14 dni na odstąpienie od umowy (sekcja 10).</li>
+<li>Klikasz przycisk „Zamawiam i płacę” - to oznacza złożenie zamówienia z obowiązkiem zapłaty.</li>
+<li>Na stronie operatora płatności (Stripe) podajesz dane płatności i zatwierdzasz płatność.</li>
+</ol>
+<p><strong>Umowa o Painless Premium</strong> zostaje zawarta w chwili, gdy operator płatności potwierdzi przyjęcie pierwszej płatności. Premium włącza się na Twoim koncie zwykle w ciągu kilku sekund. Zawarcie umowy potwierdzimy e-mailem na adres przypisany do konta - wraz z treścią tego regulaminu i informacją o prawie odstąpienia.</p>
+<p><strong>Metody płatności:</strong> karta płatnicza oraz inne metody pokazane na stronie płatności (np. Apple Pay, Google Pay). Płatność obsługuje operator płatności - nie poznajemy ani nie przechowujemy pełnego numeru Twojej karty.</p>
+<p><strong>Faktura:</strong> potwierdzenie płatności otrzymasz e-mailem od operatora płatności. Fakturę wystawimy na Twoje żądanie - napisz na adres z sekcji 01 (najlepiej w ciągu 3 miesięcy od końca miesiąca zakupu).</p>
+</section>
+<section>
+<h2 id="s08"><span class="num">08</span>Odnawianie, rezygnacja i koniec Premium</h2>
+<p><strong>Odnawianie.</strong> Premium odnawia się automatycznie na kolejny okres tej samej długości i w tej samej cenie, a operator płatności pobiera opłatę tą samą metodą płatności na początku każdego okresu. Datę następnego odnowienia widzisz w Ustawieniach. Przy planie kwartalnym przypomnimy Ci e-mailem o odnowieniu około 7 dni wcześniej.</p>
+<p><strong>Rezygnacja.</strong> Z odnawiania zrezygnujesz w każdej chwili, bez podawania powodu: Ustawienia → „Zarządzaj subskrypcją” (strona operatora płatności) albo wiadomością na adres z sekcji 01. Premium działa do końca opłaconego okresu, a kolejna opłata nie zostanie pobrana. Za niewykorzystaną część opłaconego okresu nie zwracamy pieniędzy - z wyjątkiem odstąpienia od umowy (sekcja 10), reklamacji (sekcja 14) i sytuacji opisanych w sekcjach 09, 16, 17 i poniżej.</p>
+<p><strong>Nieudana płatność.</strong> Jeśli pobranie opłaty za kolejny okres się nie uda, operator płatności ponowi próbę w ciągu kolejnych dni. W tym czasie Premium działa nadal. Jeśli płatność się nie powiedzie, Premium się kończy i wracasz do Painless Free.</p>
+<p><strong>Po zakończeniu Premium nic nie usuwamy.</strong> Wracasz do Painless Free. Plany, wpisy i nagrania ponad limit wersji Free zostają ukryte, a nie usunięte - wracają, gdy ponownie wykupisz Premium. Trwale usuwa je dopiero usunięcie konta.</p>
+<p><strong>Usunięcie konta</strong> anuluje subskrypcję od razu i kończy Premium. Za niewykorzystaną część okresu nie zwracamy pieniędzy (chyba że w ciągu 14 dni od zakupu odstąpisz od umowy - sekcja 10). Jeśli chcesz tylko przestać płacić, wystarczy rezygnacja z odnawiania.</p>
+<p><strong>Wstrzymanie funkcji ze względów bezpieczeństwa.</strong> Jeśli asystent skieruje Cię do lekarza (sekcja 03), funkcje związane z planami ćwiczeń, podsumowaniami i wydrukiem są wstrzymane do czasu wyjaśnienia sytuacji. Jeśli w związku z tym chcesz zakończyć Premium, napisz do nas - zakończymy subskrypcję i zwrócimy Ci kwotę za niewykorzystane pełne dni bieżącego okresu.</p>
+</section>
+<section>
+<h2 id="s09"><span class="num">09</span>Zmiana ceny</h2>
+<p>Cena Twojej subskrypcji nie zmieni się bez Twojej zgody. Jeśli zmienimy cenę Premium, poinformujemy Cię o tym e-mailem i w aplikacji co najmniej 30 dni przed końcem bieżącego okresu rozliczeniowego. Nowa cena będzie obowiązywać tylko wtedy, gdy ją zaakceptujesz w aplikacji. Jeśli jej nie zaakceptujesz, subskrypcja nie zostanie odnowiona i Premium zakończy się z końcem opłaconego okresu.</p>
+</section>
+<section>
+<h2 id="s10"><span class="num">10</span>Prawo odstąpienia od umowy (konsumenci)</h2>
+<p><strong>Masz 14 dni na odstąpienie od umowy o Painless Premium bez podawania przyczyny.</strong> Termin liczy się od dnia zawarcia umowy, czyli od pierwszego zakupu. Automatyczne odnowienie subskrypcji nie rozpoczyna nowego terminu.</p>
+<p><strong>Jak odstąpić.</strong> Wyślij nam przed upływem terminu jednoznaczne oświadczenie, np. e-mailem na adres z sekcji 01 albo listem na adres do doręczeń. Możesz użyć wzoru z Załącznika nr 1, ale nie musisz. Wystarczy, że wyślesz oświadczenie przed upływem 14 dni. Otrzymanie oświadczenia niezwłocznie potwierdzimy e-mailem.</p>
+<p><strong>Jeśli poprosiłeś/aś o rozpoczęcie Premium od razu</strong> (pole wyboru przed zakupem), zapłacisz za czas, przez który Premium działało do chwili odstąpienia. Liczymy to proporcjonalnie:</p>
+<div class="note"><p>kwota do zapłaty = cena × liczba rozpoczętych dni korzystania ÷ liczba dni w okresie rozliczeniowym</p></div>
+<p>Przykład: plan kwartalny (69 zł, 92 dni w okresie), odstąpienie 5. dnia: zapłacisz 69 × 5 ÷ 92 = 3,75 zł, a zwrócimy Ci 65,25 zł.</p>
+<p><strong>Jeśli nie poprosiłeś/aś o rozpoczęcie od razu</strong> albo nie poinformowaliśmy Cię o tej zasadzie, zwracamy całą zapłaconą kwotę.</p>
+<p><strong>Zwrot pieniędzy.</strong> Zwracamy należną kwotę niezwłocznie, nie później niż w ciągu 14 dni od otrzymania oświadczenia, tą samą metodą płatności, której użyłeś/aś - bez żadnych dodatkowych kosztów. Z chwilą odstąpienia Premium się kończy, a Twoje konto wraca do Painless Free (bez usuwania danych - sekcja 08).</p>
+</section>
+<section>
+<h2 id="s11"><span class="num">11</span>Uczciwe korzystanie z Premium</h2>
+<p>„Bez stałego limitu” w Premium oznacza korzystanie w zwykłym, osobistym zakresie. Żeby chronić stabilność usługi i koszty działania asystenta, stosujemy górną granicę <strong>200 wiadomości dziennie i 2000 wiadomości w miesiącu kalendarzowym</strong> - to wielokrotnie więcej niż potrzeba przy zwykłym korzystaniu. Po jej osiągnięciu zobaczysz komunikat o przerwie do następnego dnia lub miesiąca. Granica nie przerywa rozmowy o objawach alarmowych (sekcja 06).</p>
+<p>Premium jest przeznaczone dla jednej osoby. Nie udostępniaj konta innym ani nie korzystaj z niego w sposób zautomatyzowany. Granice uczciwego korzystania możemy zmienić tylko w trybie sekcji 18 i nigdy na niekorzyść w trakcie opłaconego okresu.</p>
+</section>
+<section>
+<h2 id="s12"><span class="num">12</span>Zasady korzystania</h2>
+<p>Korzystając z Painless, zobowiązujesz się, że:</p>
+<ul>
+<li>nie będziesz dostarczać treści o charakterze bezprawnym - w szczególności obraźliwych, nawołujących do przemocy lub naruszających prawa innych osób;</li>
+<li>nie będziesz podszywać się pod inną osobę ani zakładać konta na cudze dane;</li>
+<li>nie będziesz próbować zakłócić działania aplikacji, obejść jej zabezpieczeń ani pobierać jej zawartości w sposób automatyczny;</li>
+<li>nie będziesz wykorzystywać aplikacji do udzielania porad innym osobom ani do celów komercyjnych;</li>
+<li>rozumiesz, że wskazówki asystenta wykonujesz na własną odpowiedzialność i przerwiesz ćwiczenie, jeśli wywoła ból lub dyskomfort.</li>
+</ul>
+<p>Dla Twojego bezpieczeństwa: nie wpisuj w rozmowie danych, których nie musimy znać - numeru PESEL, adresu, danych innych osób. Do udzielenia wskazówek wystarczy opis tego, co Cię boli.</p>
+</section>
+<section>
+<h2 id="s13"><span class="num">13</span>Wymagania techniczne</h2>
+<p>Do korzystania z Painless wystarczy urządzenie z dostępem do internetu, aktualna przeglądarka internetowa z włączoną obsługą JavaScript oraz aktywny adres e-mail. Aplikację możesz dodać do ekranu głównego telefonu - nie musisz nic instalować ze sklepu. Przypomnienia wymagają zgody na powiadomienia w przeglądarce lub telefonie. Do otwarcia wydruku potrzebny jest program do plików PDF (jest w każdym współczesnym telefonie i komputerze).</p>
+<p><strong>Ryzyka.</strong> Korzystanie z internetu wiąże się ze zwykłymi ryzykami (np. złośliwe oprogramowanie, próby wyłudzenia danych). Nigdy nie prosimy o kod logowania ani dane karty w wiadomościach e-mail. Link do wydruku dla fizjoterapeuty otworzy każdy, kto go dostanie - wysyłaj go tylko zaufanej osobie; możesz go w każdej chwili wyłączyć w aplikacji.</p>
+</section>
+<section>
+<h2 id="s14"><span class="num">14</span>Reklamacje</h2>
+<p>Jeśli Painless (w tym Premium) nie działa zgodnie z umową albo coś budzi Twój sprzeciw - napisz na adres z sekcji 01 albo listem na adres do doręczeń. Opisz, czego dotyczy sprawa, i - jeśli możesz - czego oczekujesz. Odpowiemy na adres e-mail, z którego napisałeś/aś, <strong>w ciągu 14 dni</strong> od otrzymania reklamacji. Jeśli nie odpowiemy w tym terminie, uznaje się, że reklamację uwzględniliśmy.</p>
+<p>Jeśli usługa cyfrowa nie jest zgodna z umową, jako konsument możesz żądać doprowadzenia jej do zgodności z umową. Jeśli tego nie zrobimy w rozsądnym czasie albo brak zgodności jest istotny, możesz żądać obniżenia ceny albo odstąpić od umowy - na zasadach z ustawy o prawach konsumenta (rozdział 5b).</p>
+<p><strong>Pozasądowe rozwiązywanie sporów.</strong> Jako konsument możesz skorzystać z pomocy miejskiego lub powiatowego rzecznika konsumentów oraz z mediacji lub sądu polubownego przy Wojewódzkim Inspektoracie Inspekcji Handlowej. Informacje znajdziesz na stronie Urzędu Ochrony Konkurencji i Konsumentów (uokik.gov.pl). Skorzystanie z tych sposobów jest dobrowolne.</p>
+</section>
+<section>
+<h2 id="s15"><span class="num">15</span>Odpowiedzialność</h2>
+<p>Dokładamy starań, aby wskazówki w aplikacji były rzetelne i bezpieczne, a zasady merytoryczne asystenta przygotowuje fizjoterapeuta. Nie możemy jednak zagwarantować, że wygenerowana automatycznie odpowiedź będzie w każdym przypadku trafna ani odpowiednia dla Twojej sytuacji - traktuj ją jako informację edukacyjną, a nie zalecenie medyczne. Nie obiecujemy konkretnych efektów.</p>
+<p>Odpowiadamy za szkody na zasadach określonych w przepisach prawa. Nie ograniczamy i nie wyłączamy odpowiedzialności w zakresie, w jakim przepisy na to nie pozwalają - w szczególności wobec konsumentów, za szkody wyrządzone umyślnie i za szkody na osobie. Nie odpowiadamy natomiast za skutki podania nieprawdziwych informacji o swoim stanie zdrowia ani za wykonywanie ćwiczeń wbrew wyraźnemu zaleceniu kontaktu z lekarzem.</p>
+</section>
+<section>
+<h2 id="s16"><span class="num">16</span>Dostępność i zakończenie działania</h2>
+<p>Dbamy o to, żeby Painless działał bez przerw, ale mogą się zdarzyć przerwy techniczne lub awarie po stronie dostawców usług, z których korzystamy. Planowane dłuższe przerwy zapowiemy w aplikacji. Jeśli z naszej winy Premium nie będzie działać dłużej niż 3 dni z rzędu, na Twoją prośbę przedłużymy opłacony okres o czas przerwy albo zwrócimy proporcjonalną część ceny.</p>
+<p>O planowanym zakończeniu działania Painless uprzedzimy Cię co najmniej 30 dni wcześniej, abyś zdążył/a zapisać to, co dla Ciebie ważne. Opłacone Premium będzie działać do końca okresu, a jeśli aplikacja zakończy działanie wcześniej - zwrócimy kwotę za niewykorzystane dni.</p>
+</section>
+<section>
+<h2 id="s17"><span class="num">17</span>Twoje dane osobowe</h2>
+<p>Opisy dolegliwości, wpisy w dzienniku i plany to dane dotyczące zdrowia. Przetwarzamy je wyłącznie na podstawie Twojej wyraźnej zgody, wyrażonej przy zakładaniu konta. Zgodę możesz wycofać w każdej chwili - bez niej nie możesz jednak korzystać z rozmowy z asystentem i funkcji, które z niej wynikają.</p>
+<p>Jeśli masz Premium i wycofasz zgodę na przetwarzanie danych o zdrowiu, możesz od razu zakończyć umowę o Premium - zwrócimy Ci kwotę za niewykorzystane pełne dni bieżącego okresu.</p>
+<p>Szczegóły - jakie dane zbieramy, komu je powierzamy (także operatorowi płatności), jak długo je przechowujemy i jakie masz prawa - opisuje <a href="https://bigjpainless.github.io/painless-polityka-prywatno-ci/">Polityka prywatności</a>, która jest częścią tego regulaminu.</p>
+</section>
+<section>
+<h2 id="s18"><span class="num">18</span>Zmiany regulaminu</h2>
+<p>Możemy zmienić ten regulamin z ważnych przyczyn: zmiany przepisów prawa lub decyzji organów, zmiany zakresu lub sposobu działania funkcji aplikacji, wprowadzenia nowych funkcji, zmiany dostawców usług lub operatora płatności, konieczności zapewnienia bezpieczeństwa użytkowników albo zmiany danych usługodawcy.</p>
+<p>O każdej zmianie poinformujemy Cię e-mailem i komunikatem w aplikacji <strong>co najmniej 14 dni</strong> przed jej wejściem w życie (zmiany korzystne dla Ciebie i wymagane przez prawo mogą wejść szybciej). Jeśli nie zgadzasz się na nową wersję:</p>
+<ul>
+<li>w Painless Free możesz do dnia jej wejścia w życie usunąć konto - bez żadnych konsekwencji;</li>
+<li>w Painless Premium możesz do dnia jej wejścia w życie zakończyć umowę o Premium - zwrócimy Ci kwotę za niewykorzystane pełne dni bieżącego okresu.</li>
+</ul>
+<p>Zmiany nie dotyczą ceny opłaconego okresu; zmianę ceny opisuje sekcja 09.</p>
+</section>
+<section>
+<h2 id="s19"><span class="num">19</span>Postanowienia końcowe</h2>
+<p>Regulamin jest dostępny na tej stronie w formie, która pozwala go pobrać, zapisać i wydrukować. Udostępniamy go przed założeniem konta i przed zakupem Premium, a po zakupie wysyłamy go e-mailem. Poprzednie wersje udostępnimy na żądanie.</p>
+<p>W sprawach nieuregulowanych stosuje się prawo polskie, w szczególności Kodeks cywilny, ustawę o świadczeniu usług drogą elektroniczną oraz - jeśli jesteś konsumentem - ustawę o prawach konsumenta. Regulamin nie ogranicza uprawnień, które przysługują Ci na podstawie bezwzględnie obowiązujących przepisów. Spory rozstrzygają sądy właściwe według przepisów ogólnych.</p>
+<p>Jeśli którekolwiek postanowienie regulaminu okaże się nieważne, pozostałe zachowują moc.</p>
+<p><strong>Przepis przejściowy.</strong> Ta wersja regulaminu obowiązuje od 21.10.2026. Jeśli konto założyłeś/aś przed tym dniem, do 4.11.2026 korzystasz z wersji bezpłatnej na dotychczasowych zasadach (regulamin w wersji 1.0 i dotychczasowe limity), a nowe zasady wersji Free z sekcji 06 obowiązują Cię od 4.11.2026. Jeśli się na nie nie zgadzasz, możesz do tego dnia usunąć konto bez żadnych konsekwencji. Zakup Painless Premium jest możliwy od 21.10.2026 i odbywa się na zasadach tej wersji regulaminu.</p>
+</section>
+<section>
+<h2 id="z19">Załącznik nr 1 Wzór formularza odstąpienia od umowy</h2>
+<p>(formularz ten należy wypełnić i odesłać tylko w przypadku chęci odstąpienia od umowy)</p>
+<div class="note"><p><strong>Adresat:</strong> Jędrzej Wąsik Fizjoterapia, ul. Karola Szymanowskiego 23/3, 43-200 Pszczyna, e-mail: <a href="mailto:movepainless@gmail.com">movepainless@gmail.com</a></p>
+<p>Ja niniejszym informuję o moim odstąpieniu od umowy o świadczenie usługi cyfrowej Painless Premium.</p>
+<ul>
+<li>Data zawarcia umowy (zakupu): ..................................</li>
+<li>Imię i nazwisko konsumenta: ..................................</li>
+<li>Adres e-mail konta w Painless: ..................................</li>
+<li>Adres konsumenta: ..................................</li>
+<li>Podpis konsumenta (tylko jeżeli formularz jest przesyłany w wersji papierowej): ..................................</li>
+<li>Data: ..................................</li>
+</ul></div>
+</section>
+</main>
+
+<footer class="wrap">
+  <span>Painless — regulamin, wersja 2.0</span>
+  <span>movepainless@gmail.com</span>
+</footer>
+
+</body>
+</html>
