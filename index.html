@@ -154,8 +154,8 @@
   <div class="hero">
     <h1>Polityka prywatności</h1>
     <div class="meta">
-      <span>wersja: <b>3.0</b></span>
-      <span>obowiązuje od: <b>21.10.2026</b></span>
+      <span>wersja: <b>3.1</b></span>
+      <span>obowiązuje od: <b>12.11.2026</b></span>
       <span>dotyczy: <b>aplikacji Painless</b></span>
     </div>
     <p class="lead">Painless to aplikacja, w której rozmawiasz z asystentem AI o dolegliwościach bólowych, prowadzisz dziennik i ćwiczysz według planu. Opisy dolegliwości, wpisy w dzienniku i plany to dane dotyczące zdrowia - traktujemy je z najwyższą ostrożnością. Ta polityka wyjaśnia prostym językiem: jakie dane zbieramy, po co, komu je powierzamy, jak długo je trzymamy i jak możesz je w każdej chwili usunąć.</p>
@@ -223,7 +223,7 @@
 </tr>
 <tr class="odd">
 <td>Przypomnienia</td>
-<td>wybrane dni i godziny, techniczny adres subskrypcji powiadomień Twojej przeglądarki, rodzaj urządzenia (iOS / Android / komputer). Treść powiadomień jest neutralna - nie zawiera nazw dolegliwości ani ćwiczeń</td>
+<td>wybrane dni i godziny, techniczny adres subskrypcji powiadomień Twojej przeglądarki, rodzaj urządzenia (iOS / Android / komputer). Oprócz przypomnień wysyłamy powiadomienia o Twoim koncie (np. o gotowym podsumowaniu albo nagrodzie za polecenie). Treść powiadomień jest neutralna - nie zawiera nazw dolegliwości ani ćwiczeń </td>
 </tr>
 <tr class="even">
 <td>Wydruk dla fizjoterapeuty (Premium)</td>
@@ -236,6 +236,14 @@
 <tr class="even">
 <td>Dane do faktury</td>
 <td>gdy poprosisz o fakturę: imię i nazwisko lub firma, adres, ewentualnie NIP</td>
+</tr>
+<tr class="even">
+<td>Program poleceń</td>
+<td>Twój kod polecający; jeśli polecasz - liczba osób, które dołączyły i są aktywne; jeśli dołączasz z polecenia - powiązanie Twojego konta z kontem polecającego (kiedy i czy przez link, czy przez kod) oraz status polecenia (oczekuje / spełnione / wygasło)</td>
+</tr>
+<tr class="odd">
+<td>Przepustki Premium</td>
+<td>od kiedy do kiedy obowiązują, z jakiego powodu (dołączenie z polecenia, nagroda za polecenie, przyznanie przez zespół) i czy zostały odebrane</td>
 </tr>
 <tr class="odd">
 <td>Zgody</td>
@@ -278,6 +286,13 @@
 <tr class="even">
 <td>Założenie i obsługa konta, logowanie, przypomnienia, Painless Free</td>
 <td>wykonanie umowy (art. 6 ust. 1 lit. b RODO)</td>
+<tr class="even">
+<td>Program poleceń: powiązanie kont, przepustki Premium, liczniki na ekranie poleceń</td>
+<td>wykonanie umowy - zasady programu w Regulaminie (art. 6 ust. 1 lit. b RODO)</td>
+</tr>
+<tr class="odd">
+<td>Sprawdzenie, czy znajomy, który dołączył z polecenia, jest aktywny (warunek nagrody dla polecającego)</td>
+<td>Twoja <strong>wyraźna zgoda</strong> (art. 9 ust. 2 lit. a RODO), bo fakt ułożenia planu i daty wpisów w dzienniczku dotyczą zdrowia - patrz ramka pod tabelą</td>
 </tr>
 <tr class="odd">
 <td>Sprzedaż i obsługa Painless Premium: płatność, odnowienia, rezygnacja, potwierdzenia</td>
@@ -309,6 +324,7 @@
 </tr>
 </tbody>
 </table></div>
+<div class="note"><p><strong>Program poleceń a dane o zdrowiu.</strong> Jeśli dołączysz z polecenia, przez 14 dni system automatycznie sprawdza tylko dwie rzeczy: czy masz ułożony plan i w które dni zapisałeś/aś wpis w dzienniczku. Nie czyta treści planu, wpisów ani rozmów. Polecającemu pokazujemy wyłącznie liczby, bez Twojego imienia i e-maila - ale jeśli polecił Painless tylko Tobie albo kilku osobom, może się z nich domyślić, że korzystasz z aplikacji i ułożyłeś/aś plan. Jeśli tego nie chcesz, załóż konto bez linku i nie wpisuj kodu. Zgodę możesz cofnąć w każdej chwili, pisząc na adres z sekcji 01 - polecenie przestanie wtedy być sprawdzane, a Twoja przepustka zostaje.</p></div>
 <p>Podanie danych jest dobrowolne, ale bez imienia i adresu e-mail nie założysz konta, a bez zgody na przetwarzanie danych o zdrowiu nie skorzystasz z rozmowy z asystentem.</p>
 <div class="note"><p><strong>Ważne:</strong> Asystent udziela wskazówek o charakterze edukacyjnym. Odpowiedzi, plany i podsumowania są generowane automatycznie przez sztuczną inteligencję i mogą zawierać błędy. Asystent nie stawia diagnoz, nie zaleca leków i nie zastępuje konsultacji lekarskiej ani fizjoterapeutycznej. W razie nagłych lub niepokojących objawów skontaktuj się z lekarzem, a w sytuacji zagrożenia życia zadzwoń pod 112.</p></div>
 </section>
@@ -362,6 +378,7 @@
 </table></div>
 <p><strong>Stripe</strong> w części działa jako nasz podmiot przetwarzający (obsługa płatności), a w części jako odrębny administrator - np. przy weryfikacji płatności, przeciwdziałaniu oszustwom i wykonywaniu własnych obowiązków prawnych instytucji płatniczej. Zasady Stripe: stripe.com/pl/privacy.</p>
 <p><strong>Usługi powiadomień:</strong> jeśli włączysz przypomnienia, powiadomienia dostarcza usługa powiadomień Twojej przeglądarki lub systemu (np. Apple, Google, Mozilla). Przekazujemy jej wyłącznie zaszyfrowaną, neutralną treść powiadomienia.</p>
+<p><strong>Osoba, która poleciła Ci Painless,</strong> nie dostaje żadnych Twoich danych poza tym, że jej liczniki („dołączyli”, „aktywni”, „nagrody”) wzrosną (sekcja 03).</p>
 <p><strong>Fizjoterapeuta, któremu wyślesz link do wydruku,</strong> otrzymuje dane z wydruku, bo Ty mu je przekazujesz. Od momentu pobrania pliku sam odpowiada za te dane.</p>
 </section>
 <section>
@@ -405,6 +422,10 @@
 <tr class="odd">
 <td>Status subskrypcji w aplikacji</td>
 <td>do usunięcia konta</td>
+</tr>
+<tr class="odd">
+<td>Program poleceń i przepustki</td>
+<td>do usunięcia konta. Usunięcie konta znajomego usuwa jego powiązanie z polecającym (przyznana już nagroda polecającego zostaje). Usunięcie konta polecającego usuwa jego kod i powiązania z jego poleceń</td>
 </tr>
 <tr class="even">
 <td>Dane rozliczeniowe (u operatora płatności i w księgowości: transakcje, faktury)</td>
@@ -487,7 +508,7 @@
 </main>
 
 <footer class="wrap">
-  <span>Painless — polityka prywatności, wersja 3.0</span>
+  <span>Painless — polityka prywatności, wersja 3.1</span>
   <span>movepainless@gmail.com</span>
 </footer>
 
