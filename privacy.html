@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Painless</title>
+<meta name="description" content="Privacy Policy of the Painless app.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Inter:wght@400;600&family=Space+Mono&display=swap" rel="stylesheet">
+<script>
+(function(){try{if(new URLSearchParams(location.search).get('lang')==='en'){localStorage.setItem('painless_doc_lang','en')}}catch(e){}})();
+</script>
+<link rel="alternate" hreflang="pl" href="https://bigjpainless.github.io/painless-polityka-prywatno-ci/">
+<link rel="alternate" hreflang="en" href="https://bigjpainless.github.io/painless-polityka-prywatno-ci/privacy.html">
+<link rel="alternate" hreflang="x-default" href="https://bigjpainless.github.io/painless-polityka-prywatno-ci/privacy.html">
+<style>
+  :root{
+    --green:#4CAF1E;
+    --green-dark:#3A8A15;
+    --ink:#1C2318;
+    --ink-soft:#4A5544;
+    --paper:#FAFBF7;
+    --card:#FFFFFF;
+    --line:#E3E9DD;
+    --mono:'Space Mono',monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+  body{
+    font-family:'Inter',system-ui,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.65;
+    font-size:16px;
+  }
+  .wrap{max-width:720px;margin:0 auto;padding:0 20px}
+
+  header{
+    border-bottom:1px solid var(--line);
+    padding:28px 0 24px;
+  }
+  .brand{display:flex;align-items:center;gap:12px}
+  .blob{width:44px;height:44px;flex:none}
+  .brand-name{
+    font-family:'Bricolage Grotesque',sans-serif;
+    font-weight:700;font-size:1.35rem;letter-spacing:-0.01em;
+  }
+  .brand-sub{font-family:var(--mono);font-size:.72rem;color:var(--ink-soft)}
+
+  .hero{padding:44px 0 8px}
+  h1{
+    font-family:'Bricolage Grotesque',sans-serif;
+    font-weight:700;font-size:clamp(1.9rem,5vw,2.6rem);
+    letter-spacing:-0.02em;line-height:1.15;
+  }
+  .meta{
+    font-family:var(--mono);font-size:.78rem;color:var(--ink-soft);
+    margin-top:14px;display:flex;gap:18px;flex-wrap:wrap;
+  }
+  .meta b{color:var(--green-dark);font-weight:400}
+
+  .lead{
+    margin:26px 0 0;padding:18px 20px;
+    background:var(--card);border:1px solid var(--line);border-left:4px solid var(--green);
+    border-radius:10px;color:var(--ink-soft);font-size:.95rem;
+  }
+
+  nav.toc{margin:36px 0 8px}
+  nav.toc p{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--ink-soft);margin-bottom:10px}
+  nav.toc ol{list-style:none;counter-reset:toc}
+  nav.toc li{counter-increment:toc;border-bottom:1px dashed var(--line)}
+  nav.toc a{
+    display:flex;gap:14px;align-items:baseline;
+    padding:9px 2px;color:var(--ink);text-decoration:none;font-size:.94rem;
+  }
+  nav.toc a::before{
+    content:counter(toc,decimal-leading-zero);
+    font-family:var(--mono);font-size:.75rem;color:var(--green-dark);
+  }
+  nav.toc a:hover,nav.toc a:focus-visible{color:var(--green-dark)}
+  a:focus-visible{outline:2px solid var(--green);outline-offset:3px;border-radius:3px}
+
+  main{padding-bottom:60px}
+  section{margin-top:48px}
+  h2{
+    font-family:'Bricolage Grotesque',sans-serif;
+    font-weight:700;font-size:1.32rem;letter-spacing:-0.01em;
+    display:flex;gap:12px;align-items:baseline;
+    scroll-margin-top:24px;
+  }
+  h2 .num{font-family:var(--mono);font-weight:400;font-size:.8rem;color:var(--green-dark)}
+  section>p, section>ul, section>ol{margin-top:14px}
+  section p+p{margin-top:12px}
+  ul,ol{padding-left:22px}
+  li{margin-top:7px}
+  li::marker{color:var(--green-dark)}
+  strong{font-weight:600}
+  a{color:var(--green-dark)}
+
+  .table{
+    margin-top:16px;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--card);
+  }
+  .row{display:grid;grid-template-columns:1fr 1.6fr;border-top:1px solid var(--line)}
+  .row:first-child{border-top:none}
+  .row>div{padding:12px 16px;font-size:.93rem}
+  .row>div:first-child{
+    background:#F3F7EF;font-weight:600;border-right:1px solid var(--line);
+  }
+  @media(max-width:540px){
+    .row{grid-template-columns:1fr}
+    .row>div:first-child{border-right:none;border-bottom:1px dashed var(--line)}
+  }
+
+  .note{
+    margin-top:16px;padding:14px 16px;border-radius:10px;
+    background:#F3F7EF;border:1px solid #D6E4CC;font-size:.92rem;color:var(--ink-soft);
+  }
+  .alert{
+    margin-top:16px;padding:16px 18px;border-radius:10px;
+    background:#FFF8E8;border:1px solid #E8D9A8;font-size:.95rem;color:var(--ink);
+  }
+
+  footer{
+    border-top:1px solid var(--line);
+    padding:26px 0 44px;
+    font-family:var(--mono);font-size:.75rem;color:var(--ink-soft);
+    display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  }
+
+  .tw{margin-top:16px;overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+  .tw table{border-collapse:collapse;width:100%;font-size:.9rem}
+  .tw th,.tw td{padding:10px 14px;text-align:left;vertical-align:top;border-top:1px solid var(--line)}
+  .tw thead th{background:#F3F7EF;font-weight:600;border-top:none}
+  .tw tbody tr:first-child td{border-top:none}
+  .tw thead:empty,.tw thead tr:empty{display:none}
+  .tw td:first-child{font-weight:600}
+  .note p+p{margin-top:8px}
+  .note ul{margin-top:8px}
+  @media(max-width:540px){.tw th,.tw td{padding:8px 7px;font-size:.8rem;hyphens:auto}.tw table{font-size:.8rem}}
+  .lang{margin-left:auto;font-family:var(--mono);font-size:.78rem;color:var(--green-dark);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:6px 12px;background:var(--card);white-space:nowrap}
+  .lang:hover,.lang:focus-visible{border-color:var(--green)}
+  .hero .note{margin-top:14px}
+  @media print{.lang{display:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap brand">
+    <svg class="blob" viewBox="0 0 100 100" aria-hidden="true">
+      <path fill="#4CAF1E" d="M50 4c14 0 27 6 35 16s11 24 8 37-12 24-24 30-27 7-38 1S12 70 9 57 10 29 20 18 36 4 50 4z"/>
+      <path d="M36 40q6-7 12-1M56 40q6-7 12-1M38 62q13 9 26 0" fill="none" stroke="#1C2318" stroke-width="4" stroke-linecap="round"/>
+    </svg>
+    <div>
+      <div class="brand-name">Painless</div>
+      <div class="brand-sub">bepainless.pl</div>
+    </div>
+    <a class="lang" href="./?lang=pl" hreflang="pl" lang="pl">Polski</a>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <h1>Privacy Policy</h1>
+    <div class="meta">
+      <span>version: <b>3.1</b></span>
+      <span>effective from: <b>12.11.2026</b></span>
+      <span>applies to: <b>the Painless app</b></span>
+    </div>
+    <p class="lead">Painless is an app where you talk to an AI assistant about musculoskeletal pain, keep a diary and exercise according to a plan. Descriptions of your complaints, diary entries and plans are health data - we treat them with the utmost care. This policy explains in plain language what data we collect, why, who we entrust it to, how long we keep it and how you can delete it at any time.</p>
+    <p class="note">This is the English version of the Privacy Policy. The <a href="https://bigjpainless.github.io/painless-polityka-prywatno-ci/?lang=pl">Polish version</a> has the same content.</p>
+  </div>
+
+  <nav class="toc" aria-label="Contents">
+    <p>Contents</p>
+    <ol>
+      <li><a href="#s01">Who is responsible for your data</a></li>
+      <li><a href="#s02">What data we collect</a></li>
+      <li><a href="#s03">Why we process data and on what legal basis</a></li>
+      <li><a href="#s04">Artificial intelligence and automated processing</a></li>
+      <li><a href="#s05">Who we entrust data to</a></li>
+      <li><a href="#s06">Transfers of data outside the European Economic Area</a></li>
+      <li><a href="#s07">How long we keep data</a></li>
+      <li><a href="#s08">Storage on your device (cookies and similar)</a></li>
+      <li><a href="#s09">Your rights - including deleting your account</a></li>
+      <li><a href="#s10">How we protect your data</a></li>
+      <li><a href="#s11">Age of users</a></li>
+      <li><a href="#s12">Changes to this policy</a></li>
+      <li><a href="#s13">Contact</a></li>
+    </ol>
+  </nav>
+
+<section>
+<h2 id="s01"><span class="num">01</span>Who is responsible for your data</h2>
+<p><strong>Data related to using the app</strong> (account, conversations, plans, diary, analytics): the controllers are joint controllers within the meaning of Article 26 GDPR: 1) Jędrzej Wąsik, 2) Borys Płachno, 3) Kamil Proske, who jointly run the “Painless” project. They have concluded an arrangement under which they jointly determine the purposes and means of processing and are jointly and equally responsible for the obligations under the GDPR. We handle all your requests through a single contact point (below), but you may exercise your rights against each of us. We will make the essence of the arrangement available to you on request.</p>
+<p><strong>Data related to purchasing Painless Premium</strong> (payments, invoices, tax settlements, complaints and withdrawals from the contract): the controller is the seller - Jędrzej Wąsik, running a business under the name Jędrzej Wąsik Fizjoterapia, Tax ID (NIP) 6381868571, address for service: ul. Karola Szymanowskiego 23/3, 43-200 Pszczyna, Poland.</p>
+<p><strong>Contact in all matters concerning data:</strong> <a href="mailto:movepainless@gmail.com">movepainless@gmail.com</a>.</p>
+<p>If a company takes over the project, it will become the controller of the data - we will then update this policy and inform you of the change before it happens.</p>
+</section>
+<section>
+<h2 id="s02"><span class="num">02</span>What data we collect</h2>
+<div class="tw"><table>
+<thead>
+<tr class="header">
+<th>Type of data</th>
+<th>What exactly</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Account data</td>
+<td>first name (or nickname) and email address; you sign in with a code sent by email, without a password</td>
+</tr>
+<tr class="even">
+<td>Conversations with the assistant</td>
+<td>the content of messages, including descriptions of your complaints - <strong>health data</strong> (Article 9 GDPR)</td>
+</tr>
+<tr class="odd">
+<td>Exercise plans</td>
+<td>plans and their stages prepared in the conversation, plan names, schedule - <strong>health data</strong></td>
+</tr>
+<tr class="even">
+<td>Diary</td>
+<td>date of the entry, areas marked on the body figure, intensity of the discomfort you feel, notes, whether you exercised on a given day - <strong>health data</strong></td>
+</tr>
+<tr class="odd">
+<td>Summaries (Premium)</td>
+<td>weekly and monthly summaries created from your diary and plan data - <strong>health data</strong></td>
+</tr>
+<tr class="even">
+<td>Exercises from your physiotherapist</td>
+<td>exercise name, number of sets and repetitions, order, technical identifier of the recording. <strong>The video recordings themselves are stored only on your device</strong> - they never reach our servers</td>
+</tr>
+<tr class="odd">
+<td>Reminders</td>
+<td>chosen days and times, the technical address of your browser's notification subscription, device type (iOS / Android / computer). Apart from reminders, we send notifications about your account (e.g. about a ready summary or a referral reward). The content of notifications is neutral - it does not contain names of complaints or exercises</td>
+</tr>
+<tr class="even">
+<td>Printout for your physiotherapist (Premium)</td>
+<td>when you share a link: a copy of the printout data from the last 14 days (intensity charts, areas, regularity; without your notes) and the link's expiry date</td>
+</tr>
+<tr class="odd">
+<td>Premium and payments</td>
+<td>subscription status, chosen period, end date of the period, customer and subscription identifiers at the payment operator. <strong>We do not see your card details</strong> - they are handled by the payment operator</td>
+</tr>
+<tr class="even">
+<td>Invoice data</td>
+<td>if you ask for an invoice: full name or company name, address, and Tax ID if applicable</td>
+</tr>
+<tr class="even">
+<td>Referral programme</td>
+<td>your referral code; if you refer others - the number of people who joined and are active; if you joined through a referral - the link between your account and the referrer's account (when, and whether by link or by code) and the referral status (pending / fulfilled / expired)</td>
+</tr>
+<tr class="odd">
+<td>Premium passes</td>
+<td>from when to when they are valid, for what reason (joining through a referral, a referral reward, granted by the team) and whether they were withdrawn; for a paid subscription - by how many days we moved your payment and the new payment date</td>
+</tr>
+<tr class="odd">
+<td>Consents</td>
+<td>information about the consents you gave and your age declaration, the date and the version of their wording</td>
+</tr>
+<tr class="even">
+<td>Correspondence</td>
+<td>the content of messages you send us, including complaints and notices of withdrawal from the contract</td>
+</tr>
+<tr class="odd">
+<td>Technical data</td>
+<td>e.g. account creation date, sign-in session identifiers, error logs</td>
+</tr>
+<tr class="even">
+<td>Analytics</td>
+<td>pseudonymous events describing how the app is used (e.g. “signed in”, “payment started”) - <strong>without the content of conversations and without health data</strong>, IP address and basic information about the browser and device</td>
+</tr>
+<tr class="odd">
+<td>Anonymous feedback</td>
+<td>the reason for deleting an account and surveys - stored without any link to you</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>We deliberately do not collect:</strong> location data, data from other apps, or your Polish national identification number (PESEL). We do not record your on-screen activity and we do not track you outside the app.</p>
+</section>
+<section>
+<h2 id="s03"><span class="num">03</span>Why we process data and on what legal basis</h2>
+<div class="tw"><table>
+<thead>
+<tr class="header">
+<th>Purpose</th>
+<th>Legal basis</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Conversation with the assistant, plans, diary, summaries, printout - everything related to your complaints</td>
+<td>your <strong>explicit consent</strong> to the processing of health data (Article 9(2)(a) GDPR) and the contract (Article 6(1)(b) GDPR). Without this consent, the conversation with the assistant and the features based on it are unavailable</td>
+</tr>
+<tr class="even">
+<td>Creating and maintaining your account, signing in, reminders, Painless Free</td>
+<td>performance of the contract (Article 6(1)(b) GDPR)</td>
+</tr>
+<tr class="even">
+<td>Referral programme: linking accounts, Premium passes, counters on the referral screen</td>
+<td>performance of the contract - the rules of the programme are in the Terms of Service (Article 6(1)(b) GDPR)</td>
+</tr>
+<tr class="odd">
+<td>Checking whether a friend who joined through a referral is active (the condition for the referrer's reward)</td>
+<td>your <strong>explicit consent</strong> (Article 9(2)(a) GDPR), because the fact that a plan was created and the dates of diary entries concern health - see the box below the table</td>
+</tr>
+<tr class="odd">
+<td>Selling and handling Painless Premium: payment, renewals, cancellation, confirmations</td>
+<td>performance of the contract (Article 6(1)(b) GDPR)</td>
+</tr>
+<tr class="even">
+<td>Invoices, accounting and tax settlements</td>
+<td>legal obligation (Article 6(1)(c) GDPR in conjunction with the Polish VAT Act, the Tax Ordinance and the Accounting Act / personal income tax regulations)</td>
+</tr>
+<tr class="odd">
+<td>Complaints and withdrawals from the contract</td>
+<td>legal obligation (Article 6(1)(c) GDPR in conjunction with the Polish Consumer Rights Act)</td>
+</tr>
+<tr class="even">
+<td>Demonstrating consents, defending against claims</td>
+<td>legal obligation (Article 7(1) and Article 5(2) GDPR) and our legitimate interest (Article 6(1)(f) GDPR)</td>
+</tr>
+<tr class="odd">
+<td>Security and solving technical problems, preventing abuse (including fair use of Premium)</td>
+<td>our legitimate interest (Article 6(1)(f) GDPR)</td>
+</tr>
+<tr class="even">
+<td>Analysing how the app is used and developing it</td>
+<td>our legitimate interest - improving the product (Article 6(1)(f) GDPR); you may object</td>
+</tr>
+<tr class="odd">
+<td>Developing the product based on anonymous feedback</td>
+<td>anonymous data is not personal data</td>
+</tr>
+</tbody>
+</table></div>
+<div class="note"><p><strong>The referral programme and health data.</strong> If you join through a referral, for 14 days the system automatically checks only two things: whether you have a plan and on which days you saved a diary entry. It does not read the content of the plan, entries or conversations. We show the referrer only numbers, without your name or email - but if they recommended Painless only to you or to a few people, they may guess from those numbers that you use the app and have created a plan. If you do not want this, create your account without the link and do not enter the code. You may withdraw your consent at any time by writing to the address in section 01 - the referral will then no longer be checked, and you keep your pass.</p></div>
+<p>Providing data is voluntary, but without a first name and email address you cannot create an account, and without consent to the processing of health data you cannot use the conversation with the assistant.</p>
+<div class="note"><p><strong>Important:</strong> The assistant gives educational guidance. Answers, plans and summaries are generated automatically by artificial intelligence and may contain errors. The assistant does not diagnose, does not recommend medicines and does not replace a consultation with a doctor or physiotherapist. If you have sudden or worrying symptoms, contact a doctor, and in a life-threatening situation call 112.</p></div>
+</section>
+<section>
+<h2 id="s04"><span class="num">04</span>Artificial intelligence and automated processing</h2>
+<p>The assistant's answers, exercise plans and the conclusions in weekly and monthly summaries are created by an AI model from Anthropic. We send the model the content of the conversation and, for summaries, an overview of your entries (without notes). We do not make decisions about you based solely on automated processing that would produce legal effects or similarly significantly affect you (Article 22 GDPR): the assistant gives guidance, and the decision is always yours. Under Anthropic's commercial terms, the data we send to the model is not used to train models. When choosing videos for exercises, the model receives only the name of the exercise and the titles and channels of the videos found, without any data about you.</p>
+</section>
+<section>
+<h2 id="s05"><span class="num">05</span>Who we entrust data to</h2>
+<p>We do not sell your data and we do not share it for advertising purposes. We use trusted providers (processors) with whom we have data processing agreements:</p>
+<div class="tw"><table>
+<thead>
+<tr class="header">
+<th>Provider</th>
+<th>What it does</th>
+<th>What data</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Anthropic PBC (USA)</td>
+<td>AI model generating answers, plans and the conclusions in summaries</td>
+<td>content of the conversation, overviews for summaries, exercise names when choosing videos</td>
+</tr>
+<tr class="even">
+<td>Supabase</td>
+<td>database and sign-in</td>
+<td>all account and app data</td>
+</tr>
+<tr class="odd">
+<td>Vercel</td>
+<td>hosting of the app</td>
+<td>data sent by the app while it runs</td>
+</tr>
+<tr class="even">
+<td>PostHog (EU instance)</td>
+<td>product analytics</td>
+<td>pseudonymous events, IP, technical data - without health data</td>
+</tr>
+<tr class="odd">
+<td>Resend</td>
+<td>sending emails with sign-in codes and purchase confirmations</td>
+<td>email address, content of the email</td>
+</tr>
+<tr class="even">
+<td>Stripe Payments Europe, Limited (Ireland)</td>
+<td>handling payments and subscriptions</td>
+<td>email address, payment data, amounts, country, IP at the time of payment - <strong>without health data</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Stripe</strong> acts partly as our processor (handling payments) and partly as a separate controller - e.g. when verifying payments, preventing fraud and fulfilling its own legal obligations as a payment institution. Stripe's privacy policy: stripe.com/privacy.</p>
+<p><strong>Notification services:</strong> if you turn on reminders, notifications are delivered by the notification service of your browser or operating system (e.g. Apple, Google, Mozilla). We pass on to it only the encrypted, neutral content of the notification.</p>
+<p><strong>The person who recommended Painless to you</strong> receives none of your data, except that their counters (“joined”, “active”, “rewards”) will go up (section 03).</p>
+<p><strong>The physiotherapist to whom you send the printout link</strong> receives the printout data because you pass it on to them. From the moment the file is downloaded, they are responsible for that data themselves.</p>
+</section>
+<section>
+<h2 id="s06"><span class="num">06</span>Transfers of data outside the European Economic Area</h2>
+<ul>
+<li><strong>Anthropic PBC (USA)</strong> - the content of conversations and overviews for summaries. Basis: standard contractual clauses approved by the European Commission (Article 46(2)(c) GDPR), included in the data processing agreement.</li>
+<li><strong>Resend Inc. (USA)</strong> - email address and content of emails. Basis: standard contractual clauses.</li>
+<li><strong>Stripe</strong> - payment data is processed by Stripe Payments Europe in the EEA; it may be transferred to Stripe, Inc. in the USA on the basis of the Commission's adequacy decision (EU-US Data Privacy Framework) and standard contractual clauses.</li>
+<li><strong>Supabase</strong> - the database is located in London (United Kingdom), for which the European Commission has found an adequate level of data protection (decision renewed in December 2025). The provider (Supabase, Inc.) is based in the USA - any access from the USA is safeguarded by standard contractual clauses in the data processing agreement.</li>
+<li><strong>Vercel (USA)</strong> - the app runs on servers in Washington (USA). Basis: the Commission's adequacy decision (Vercel is certified under the EU-US Data Privacy Framework).</li>
+<li><strong>PostHog</strong> - we process analytics data in an instance in the European Union.</li>
+</ul>
+<p>We will provide you with a copy of the information about the safeguards on request (contact in section 01).</p>
+</section>
+<section>
+<h2 id="s07"><span class="num">07</span>How long we keep data</h2>
+<div class="tw"><table>
+<thead>
+<tr class="header">
+<th>Data</th>
+<th>How long</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Account, conversations, plans, diary, summaries, exercises, reminders</td>
+<td>until you delete your account (Settings → “Delete account and statistics”) or on your request. We delete accounts that have been inactive for more than 24 months, together with their data</td>
+</tr>
+<tr class="even">
+<td>Exercise recordings</td>
+<td>only on your device - you delete them yourself (or they disappear when you clear your browser data)</td>
+</tr>
+<tr class="odd">
+<td>Data above the Free limits after Premium ends</td>
+<td>we do not delete it - it is hidden until you buy Premium again or delete your account</td>
+</tr>
+<tr class="even">
+<td>Printout link</td>
+<td>14 days from creation or until you switch it off earlier; after that the copy of the data is deleted automatically</td>
+</tr>
+<tr class="odd">
+<td>Subscription status in the app</td>
+<td>until the account is deleted</td>
+</tr>
+<tr class="odd">
+<td>Referral programme and passes</td>
+<td>until the account is deleted. Deleting a friend's account removes their link to the referrer (a reward already granted to the referrer remains). Deleting the referrer's account removes their code and the links from their referrals</td>
+</tr>
+<tr class="even">
+<td>Billing data (at the payment operator and in accounting: transactions, invoices)</td>
+<td>5 years from the end of the year in which the tax payment deadline passed - this is how long tax law requires. It cannot be deleted earlier, even after the account is deleted</td>
+</tr>
+<tr class="odd">
+<td>Complaints, withdrawals, correspondence</td>
+<td>until the matter is closed, and then until the limitation period for claims expires</td>
+</tr>
+<tr class="even">
+<td>Consents</td>
+<td>for as long as you use the app, and after the account is deleted for the period needed to demonstrate that the processing was lawful and to defend against claims</td>
+</tr>
+<tr class="odd">
+<td>Backups</td>
+<td>up to 30 days, after which they are permanently deleted</td>
+</tr>
+<tr class="even">
+<td>Analytics</td>
+<td>no longer than 12 months</td>
+</tr>
+<tr class="odd">
+<td>Anonymous feedback</td>
+<td>indefinitely - it cannot be linked to you</td>
+</tr>
+</tbody>
+</table></div>
+</section>
+<section>
+<h2 id="s08"><span class="num">08</span>Storage on your device (cookies and similar)</h2>
+<p>Painless stores on your device only what is strictly necessary to provide the service you ask for:</p>
+<ul>
+<li><strong>sign-in session</strong> - so that you do not have to sign in every time you open the app;</li>
+<li><strong>exercise recordings</strong> - in the browser's storage (IndexedDB), because we do not keep them on our servers;</li>
+<li><strong>notification subscription</strong> - if you turn on reminders;</li>
+<li><strong>app settings</strong> - e.g. the state of the timer.</li>
+</ul>
+<p>The analytics tool (PostHog) does not store anything on your device. We do not use advertising or tracking cookies.</p>
+</section>
+<section>
+<h2 id="s09"><span class="num">09</span>Your rights - including deleting your account</h2>
+<p>You have the right to:</p>
+<ul>
+<li><strong>erasure of your data</strong> - the quickest way is to do it yourself: Settings → “Delete account and statistics”. This irreversibly deletes your account and all data in the app and cancels your Premium subscription. Billing data remains with the payment operator and in accounting for the period required by law (section 07);</li>
+<li>access to your data and to receive a copy of it;</li>
+<li>rectification (correction) of your data;</li>
+<li>restriction of processing;</li>
+<li>object to processing based on our legitimate interest, including analytics;</li>
+<li>data portability;</li>
+<li><strong>withdraw your consent</strong> to the processing of health data at any time - this does not affect the lawfulness of processing before the withdrawal. Without consent you cannot use the conversation with the assistant; if you have Premium, you can then end the contract under the rules in the Terms of Service;</li>
+<li>lodge a complaint with the President of the Personal Data Protection Office (Prezes Urzędu Ochrony Danych Osobowych, ul. Stawki 2, 00-193 Warsaw, Poland, uodo.gov.pl).</li>
+</ul>
+<p>For matters the app itself does not handle, write to <a href="mailto:movepainless@gmail.com">movepainless@gmail.com</a>. We reply within one month at the latest.</p>
+<p>We are not able to delete anonymous feedback at your request, because we do not know which feedback comes from you - that is what makes it anonymous.</p>
+</section>
+<section>
+<h2 id="s10"><span class="num">10</span>How we protect your data</h2>
+<ul>
+<li>The connection to the app is encrypted (HTTPS).</li>
+<li>Each user technically has access only to their own data - access rules are enforced in the database.</li>
+<li>The conversation with the assistant is only possible after the consents have been given - this block works on the server side.</li>
+<li>We keep access keys to services on the server side only.</li>
+<li>Passwordless sign-in (one-time code) removes the risk of password leaks.</li>
+<li>The printout link contains a long, random key; we store only its hash in the database. The link expires after 14 days and you can switch it off at any time. <strong>Note:</strong> anyone who receives it can open it - send it only to someone you trust.</li>
+<li>No health data is sent to the payment operator, the analytics tool or the notification services.</li>
+</ul>
+</section>
+<section>
+<h2 id="s11"><span class="num">11</span>Age of users</h2>
+<p>The app is intended for people aged 18 or over. If we learn that we are processing the data of a younger person, we will delete it.</p>
+</section>
+<section>
+<h2 id="s12"><span class="num">12</span>Changes to this policy</h2>
+<p>We will inform you of significant changes by email and in the app before they take effect. The current version is always available at this address, with its version number and date.</p>
+</section>
+<section>
+<h2 id="s13"><span class="num">13</span>Contact</h2>
+<p>Questions about your data or this policy: <a href="mailto:movepainless@gmail.com">movepainless@gmail.com</a>. The rules for using the app and buying Premium are described in the <a href="https://bigjpainless.github.io/painless-polityka-prywatno-ci/terms.html">Terms of Service</a>.</p>
+</section>
+</main>
+
+<footer class="wrap">
+  <span>Painless — Privacy Policy, version 3.1</span>
+  <span>movepainless@gmail.com</span>
+</footer>
+
+</body>
+</html>

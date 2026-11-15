@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service — Painless</title>
+<meta name="description" content="Terms of Service of the Painless app.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Inter:wght@400;600&family=Space+Mono&display=swap" rel="stylesheet">
+<script>
+(function(){try{if(new URLSearchParams(location.search).get('lang')==='en'){localStorage.setItem('painless_doc_lang','en')}}catch(e){}})();
+</script>
+<link rel="alternate" hreflang="pl" href="https://bigjpainless.github.io/painless-polityka-prywatno-ci/regulamin.html">
+<link rel="alternate" hreflang="en" href="https://bigjpainless.github.io/painless-polityka-prywatno-ci/terms.html">
+<link rel="alternate" hreflang="x-default" href="https://bigjpainless.github.io/painless-polityka-prywatno-ci/terms.html">
+<style>
+  :root{
+    --green:#4CAF1E;
+    --green-dark:#3A8A15;
+    --ink:#1C2318;
+    --ink-soft:#4A5544;
+    --paper:#FAFBF7;
+    --card:#FFFFFF;
+    --line:#E3E9DD;
+    --mono:'Space Mono',monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+  body{
+    font-family:'Inter',system-ui,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.65;
+    font-size:16px;
+  }
+  .wrap{max-width:720px;margin:0 auto;padding:0 20px}
+
+  header{
+    border-bottom:1px solid var(--line);
+    padding:28px 0 24px;
+  }
+  .brand{display:flex;align-items:center;gap:12px}
+  .blob{width:44px;height:44px;flex:none}
+  .brand-name{
+    font-family:'Bricolage Grotesque',sans-serif;
+    font-weight:700;font-size:1.35rem;letter-spacing:-0.01em;
+  }
+  .brand-sub{font-family:var(--mono);font-size:.72rem;color:var(--ink-soft)}
+
+  .hero{padding:44px 0 8px}
+  h1{
+    font-family:'Bricolage Grotesque',sans-serif;
+    font-weight:700;font-size:clamp(1.9rem,5vw,2.6rem);
+    letter-spacing:-0.02em;line-height:1.15;
+  }
+  .meta{
+    font-family:var(--mono);font-size:.78rem;color:var(--ink-soft);
+    margin-top:14px;display:flex;gap:18px;flex-wrap:wrap;
+  }
+  .meta b{color:var(--green-dark);font-weight:400}
+
+  .lead{
+    margin:26px 0 0;padding:18px 20px;
+    background:var(--card);border:1px solid var(--line);border-left:4px solid var(--green);
+    border-radius:10px;color:var(--ink-soft);font-size:.95rem;
+  }
+
+  nav.toc{margin:36px 0 8px}
+  nav.toc p{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--ink-soft);margin-bottom:10px}
+  nav.toc ol{list-style:none;counter-reset:toc}
+  nav.toc li{counter-increment:toc;border-bottom:1px dashed var(--line)}
+  nav.toc a{
+    display:flex;gap:14px;align-items:baseline;
+    padding:9px 2px;color:var(--ink);text-decoration:none;font-size:.94rem;
+  }
+  nav.toc a::before{
+    content:counter(toc,decimal-leading-zero);
+    font-family:var(--mono);font-size:.75rem;color:var(--green-dark);
+  }
+  nav.toc a:hover,nav.toc a:focus-visible{color:var(--green-dark)}
+  a:focus-visible{outline:2px solid var(--green);outline-offset:3px;border-radius:3px}
+
+  main{padding-bottom:60px}
+  section{margin-top:48px}
+  h2{
+    font-family:'Bricolage Grotesque',sans-serif;
+    font-weight:700;font-size:1.32rem;letter-spacing:-0.01em;
+    display:flex;gap:12px;align-items:baseline;
+    scroll-margin-top:24px;
+  }
+  h2 .num{font-family:var(--mono);font-weight:400;font-size:.8rem;color:var(--green-dark)}
+  section>p, section>ul, section>ol{margin-top:14px}
+  section p+p{margin-top:12px}
+  ul,ol{padding-left:22px}
+  li{margin-top:7px}
+  li::marker{color:var(--green-dark)}
+  strong{font-weight:600}
+  a{color:var(--green-dark)}
+
+  .table{
+    margin-top:16px;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--card);
+  }
+  .row{display:grid;grid-template-columns:1fr 1.6fr;border-top:1px solid var(--line)}
+  .row:first-child{border-top:none}
+  .row>div{padding:12px 16px;font-size:.93rem}
+  .row>div:first-child{
+    background:#F3F7EF;font-weight:600;border-right:1px solid var(--line);
+  }
+  @media(max-width:540px){
+    .row{grid-template-columns:1fr}
+    .row>div:first-child{border-right:none;border-bottom:1px dashed var(--line)}
+  }
+
+  .note{
+    margin-top:16px;padding:14px 16px;border-radius:10px;
+    background:#F3F7EF;border:1px solid #D6E4CC;font-size:.92rem;color:var(--ink-soft);
+  }
+  .alert{
+    margin-top:16px;padding:16px 18px;border-radius:10px;
+    background:#FFF8E8;border:1px solid #E8D9A8;font-size:.95rem;color:var(--ink);
+  }
+
+  footer{
+    border-top:1px solid var(--line);
+    padding:26px 0 44px;
+    font-family:var(--mono);font-size:.75rem;color:var(--ink-soft);
+    display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  }
+
+  .tw{margin-top:16px;overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+  .tw table{border-collapse:collapse;width:100%;font-size:.9rem}
+  .tw th,.tw td{padding:10px 14px;text-align:left;vertical-align:top;border-top:1px solid var(--line)}
+  .tw thead th{background:#F3F7EF;font-weight:600;border-top:none}
+  .tw tbody tr:first-child td{border-top:none}
+  .tw thead:empty,.tw thead tr:empty{display:none}
+  .tw td:first-child{font-weight:600}
+  .note p+p{margin-top:8px}
+  .note ul{margin-top:8px}
+  @media(max-width:540px){.tw th,.tw td{padding:8px 7px;font-size:.8rem;hyphens:auto}.tw table{font-size:.8rem}}
+  .lang{margin-left:auto;font-family:var(--mono);font-size:.78rem;color:var(--green-dark);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:6px 12px;background:var(--card);white-space:nowrap}
+  .lang:hover,.lang:focus-visible{border-color:var(--green)}
+  .hero .note{margin-top:14px}
+  @media print{.lang{display:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap brand">
+    <svg class="blob" viewBox="0 0 100 100" aria-hidden="true">
+      <path fill="#4CAF1E" d="M50 4c14 0 27 6 35 16s11 24 8 37-12 24-24 30-27 7-38 1S12 70 9 57 10 29 20 18 36 4 50 4z"/>
+      <path d="M36 40q6-7 12-1M56 40q6-7 12-1M38 62q13 9 26 0" fill="none" stroke="#1C2318" stroke-width="4" stroke-linecap="round"/>
+    </svg>
+    <div>
+      <div class="brand-name">Painless</div>
+      <div class="brand-sub">bepainless.pl</div>
+    </div>
+    <a class="lang" href="regulamin.html?lang=pl" hreflang="pl" lang="pl">Polski</a>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <h1>Terms of Service</h1>
+    <div class="meta">
+      <span>version: <b>2.1</b></span>
+      <span>effective from: <b>12.11.2026</b></span>
+      <span>applies to: <b>the Painless app</b></span>
+    </div>
+    <p class="lead">Painless has a free version and a paid one (Painless Premium). These Terms explain in plain language what the app is and what it is not, who runs it, what you get for free and what in Premium, how you pay, how to cancel, withdraw from the contract and make a complaint. The most important part is section 03: it describes the limits of what Painless can do for you.</p>
+    <p class="note">This is the English version of the Terms of Service. The <a href="https://bigjpainless.github.io/painless-polityka-prywatno-ci/regulamin.html?lang=pl">Polish version</a> has the same content.</p>
+  </div>
+
+  <nav class="toc" aria-label="Contents">
+    <p>Contents</p>
+    <ol>
+      <li><a href="#s01">Who provides the service</a></li>
+      <li><a href="#s02">Key terms</a></li>
+      <li><a href="#s03">What Painless is and what it is not</a></li>
+      <li><a href="#s04">Who can use the app</a></li>
+      <li><a href="#s05">Your account and the Painless Free contract</a></li>
+      <li><a href="#s06">What you get in Free and what in Premium</a></li>
+      <li><a href="#s07">Painless Premium: purchase and payment</a></li>
+      <li><a href="#s08">Renewal, cancellation and the end of Premium</a></li>
+      <li><a href="#s09">Price changes</a></li>
+      <li><a href="#s10">Right of withdrawal (consumers)</a></li>
+      <li><a href="#s11">Fair use of Premium</a></li>
+      <li><a href="#s12">Rules of use</a></li>
+      <li><a href="#s13">Technical requirements</a></li>
+      <li><a href="#s14">Complaints</a></li>
+      <li><a href="#s15">Liability</a></li>
+      <li><a href="#s16">Availability and discontinuation</a></li>
+      <li><a href="#s17">Your personal data</a></li>
+      <li><a href="#s18">Changes to the Terms</a></li>
+      <li><a href="#s19">Final provisions</a></li>
+      <li><a href="#z19">Annex 1 Model withdrawal form</a></li>
+      <li><a href="#polecenia">Annex 2 Referral programme</a></li>
+    </ol>
+  </nav>
+
+<section>
+<h2 id="s01"><span class="num">01</span>Who provides the service</h2>
+<p>The service is provided, and Painless Premium is sold, by:</p>
+<div class="tw"><table>
+<tbody>
+<tr class="odd">
+<td>Service provider</td>
+<td>Jędrzej Wąsik, running a business under the name <strong>Jędrzej Wąsik Fizjoterapia</strong></td>
+</tr>
+<tr class="even">
+<td>Tax ID (NIP)</td>
+<td>6381868571</td>
+</tr>
+<tr class="odd">
+<td>Address for service</td>
+<td>ul. Karola Szymanowskiego 23/3, 43-200 Pszczyna, Poland</td>
+</tr>
+<tr class="even">
+<td>Email (contact, complaints, withdrawal)</td>
+<td><a href="mailto:movepainless@gmail.com">movepainless@gmail.com</a></td>
+</tr>
+</tbody>
+</table></div>
+<p>Below, we refer to the service provider as “we”. Painless is created jointly by Jędrzej Wąsik, Kamil Proske and Borys Płachno. The party to the contract with you, including the Painless Premium contract, is the service provider named above. Who is responsible for your personal data is described in the Privacy Policy.</p>
+<p>If a company takes over Painless in the future, we will inform you in advance and update these Terms.</p>
+</section>
+<section>
+<h2 id="s02"><span class="num">02</span>Key terms</h2>
+<ul>
+<li><strong>Painless (the app)</strong> - a web application available at bepainless.pl, also after being added to your phone's home screen.</li>
+<li><strong>Account</strong> - your Painless account, created with an email address.</li>
+<li><strong>Painless Free</strong> - the free version of the app, with the limits described in section 06.</li>
+<li><strong>Painless Premium</strong> - a paid subscription with additional features (section 06), for a monthly or quarterly period.</li>
+<li><strong>Billing period</strong> - one month or three months (a quarter), counted from the day of purchase or the last renewal.</li>
+<li><strong>Payment operator</strong> - Stripe Payments Europe, Limited (Ireland), which accepts payments on our behalf.</li>
+<li><strong>Consumer</strong> - a natural person who buys Premium for themselves, not in connection with a business. The consumer rights in these Terms also apply to a person running a sole proprietorship if the contract is not of a professional nature for them (Article 38a of the Polish Consumer Rights Act).</li>
+<li><strong>Premium pass</strong> - free access to the Painless Premium features for a set number of days, without giving card details and without automatic renewal.</li>
+<li><strong>Referral programme</strong> - the rules for recommending Painless to friends, described in Annex 2.</li>
+<li><strong>Referral link and referral code</strong> - a personal address (bepainless.pl/p/CODE) and a six-character code assigned to your account.</li>
+<li><strong>Referrer</strong> - a user who shares their referral link or code.</li>
+<li><strong>Friend</strong> - a person who creates a new account from a referral link or enters a referral code in the app.</li>
+</ul>
+</section>
+<section>
+<h2 id="s03"><span class="num">03</span>What Painless is and what it is not</h2>
+<p>Painless is an educational app. In it, you talk to an assistant about musculoskeletal pain and receive general guidance: example exercises, tips on everyday habits and information on when it is worth seeing a specialist. You can also keep a diary of the discomfort you feel and how regularly you exercise.</p>
+<p>Three things you need to know before you start:</p>
+<ul>
+<li><strong>You are talking to artificial intelligence, not to a human.</strong> Answers, plans and weekly and monthly summaries are created automatically and may contain errors or inaccuracies. No physiotherapist reads or replies to your messages.</li>
+<li><strong>Painless does not diagnose, does not provide treatment and does not recommend medicines.</strong> It does not replace a visit to a doctor or a physiotherapist. Summaries and the printout for your physiotherapist only bring together data you have recorded yourself, without any assessment of your health.</li>
+<li><strong>Do not make decisions about your health solely on the basis of what the app says.</strong> If your symptoms are sudden, getting worse or worrying you, contact a doctor. In a life-threatening situation, call 112.</li>
+</ul>
+<div class="note"><p>If symptoms that require an urgent medical consultation come up in the conversation, the assistant will stop giving guidance and ask you to contact a specialist. Until the situation is clarified, the app then pauses exercise plans, summaries, the printout and reminders - also in Premium. This is not a formality, but the most important safety feature of this app (more in section 08).</p></div>
+<p>Painless is not a medical device and is not intended for diagnosing, monitoring or treating any disease.</p>
+</section>
+<section>
+<h2 id="s04"><span class="num">04</span>Who can use the app</h2>
+<p>Painless is intended only for adults aged 18 or over. When creating an account, you confirm your age. If you are under 18, do not use the app. If we learn that an account belongs to a minor, we will delete it together with its data, and refund any Premium payment in full.</p>
+<p>We sell Painless Premium to people in Poland, in Polish zloty (PLN).</p>
+</section>
+<section>
+<h2 id="s05"><span class="num">05</span>Your account and the Painless Free contract</h2>
+<p>The contract for using Painless Free is concluded when you create an account: you provide your first name and email address, accept these Terms, consent to the processing of health data and confirm your age. You sign in with a code sent to your email address - you do not set a password. The contract is free of charge and concluded for an indefinite period.</p>
+<p>You can terminate the contract at any time and without giving a reason: just use the “Delete account and statistics” button in Settings, or send a message to the address in section 01. Your account and your data are then deleted (details in the Privacy Policy). Deleting your account automatically cancels your Premium subscription - see section 08.</p>
+<p>We may terminate the contract if you seriously breach the rules in section 12, or if we discontinue the app (section 16). We will notify you by email, unless the breach requires an immediate response.</p>
+</section>
+<section>
+<h2 id="s06"><span class="num">06</span>What you get in Free and what in Premium</h2>
+<div class="tw"><table>
+<thead>
+<tr class="header">
+<th>Feature</th>
+<th>Painless Free</th>
+<th>Painless Premium</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Conversation with the assistant</td>
+<td>up to 15 messages a day and 45 in a calendar month</td>
+<td>no fixed limit, subject to fair use (section 11)</td>
+</tr>
+<tr class="even">
+<td>Exercise plans</td>
+<td>1 active plan; a new plan after 7 days</td>
+<td>up to 3 plans at the same time, changes along the way, further stages</td>
+</tr>
+<tr class="odd">
+<td>Weekly summary and the “Results” tab</td>
+<td>- (charts in History)</td>
+<td>yes, with a discussion in the chat</td>
+</tr>
+<tr class="even">
+<td>Maintenance plan, once the discomfort has gone</td>
+<td>-</td>
+<td>yes, with a monthly summary</td>
+</tr>
+<tr class="odd">
+<td>Printout for your physiotherapist (PDF and link)</td>
+<td>-</td>
+<td>yes (last 14 days)</td>
+</tr>
+<tr class="even">
+<td>Areas in the diary</td>
+<td>1 per day</td>
+<td>up to 5 per day</td>
+</tr>
+<tr class="odd">
+<td>Diary history</td>
+<td>last 30 days</td>
+<td>the whole period</td>
+</tr>
+<tr class="even">
+<td>Heat map</td>
+<td>-</td>
+<td>yes (last 14 days)</td>
+</tr>
+<tr class="odd">
+<td>Recordings of exercises from your physiotherapist</td>
+<td>up to 3</td>
+<td>no fixed limit</td>
+</tr>
+<tr class="odd">
+<td>YouTube videos for the exercises in your plan</td>
+<td>-</td>
+<td>yes, where we find a suitable video</td>
+</tr>
+<tr class="even">
+<td>Exercise reminders</td>
+<td>yes</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table></div>
+<p>We count days and months according to Polish time. You can finish a conversation about symptoms that may require a medical consultation even after you have used up your message limit (within reason, a few extra messages) - the limit never interrupts this part of the conversation.</p>
+<p>Exercise recordings are stored only in your device's storage, not on our servers. If you change your phone, clear your browser data or remove the app from your home screen, the recordings may be lost and we are not able to restore them.</p>
+<p>We may develop the range of features. We will not limit Premium features during a paid billing period; changes to the scope of the Free or Premium version are made under the procedure in section 18.</p>
+<p><strong>Premium without buying it.</strong> You can also have the Premium features free of charge for the duration of a Premium pass - e.g. from the referral programme (Annex 2). During that time you have the same features as in paid Premium. You can see the end date of the pass in Settings.</p>
+<p>Videos for the exercises in your plan (Premium). Next to the exercises in your plan, we show a link to a short instructional video on YouTube. The video is chosen by Painless, but it is made by someone else and it plays on YouTube, not in the app. We will not find a suitable video for every exercise. Videos may also disappear or change, so we do not guarantee their availability and we are not responsible for their content. A video does not replace the description of the exercise in your plan: exercise as described in the plan, and stop if something hurts. By using Painless, to the extent the app uses the YouTube API Services, you accept the YouTube Terms of Service.</p>
+</section>
+<section>
+<h2 id="s07"><span class="num">07</span>Painless Premium: purchase and payment</h2>
+<p><strong>Prices</strong> (final prices you pay):</p>
+<ul>
+<li><strong>PLN 29</strong> for a monthly period,</li>
+<li><strong>PLN 69</strong> for a quarterly period (3 months).</li>
+</ul>
+<p><strong>How you buy:</strong></p>
+<ol type="1">
+<li>In the app, you choose the period (monthly or quarterly) and read the summary of the terms.</li>
+<li>You tick whether you want Premium to start straight away, even before the 14-day withdrawal period ends (section 10).</li>
+<li>You click the order button (in the Polish version of the app “Zamawiam i płacę”, in the English version “Order with obligation to pay”) - this means placing an order with an obligation to pay.</li>
+<li>On the payment operator's page (Stripe), you enter your payment details and confirm the payment.</li>
+</ol>
+<p><strong>The Painless Premium contract</strong> is concluded when the payment operator confirms receipt of the first payment. Premium is usually switched on in your account within a few seconds. We will confirm the conclusion of the contract by email to the address linked to your account - together with the text of these Terms and information about the right of withdrawal.</p>
+<p><strong>Payment methods:</strong> payment card and other methods shown on the payment page (e.g. Apple Pay, Google Pay). The payment is handled by the payment operator - we neither learn nor store your full card number.</p>
+<p><strong>Invoice:</strong> you will receive a payment confirmation by email from the payment operator. We will issue an invoice on request - write to the address in section 01 (preferably within 3 months from the end of the month of purchase).</p>
+</section>
+<section>
+<h2 id="s08"><span class="num">08</span>Renewal, cancellation and the end of Premium</h2>
+<p><strong>Renewal.</strong> Premium renews automatically for another period of the same length and at the same price, and the payment operator charges the fee using the same payment method at the start of each period. You can see the date of the next renewal in Settings. For the quarterly plan, we will remind you of the renewal by email about 7 days in advance.</p>
+<p><strong>Cancellation.</strong> You can cancel the renewal at any time, without giving a reason: Settings → “Manage subscription” (the payment operator's page), or by a message to the address in section 01. Premium stays active until the end of the paid period, and the next fee will not be charged. We do not refund the unused part of a paid period - except in the case of withdrawal from the contract (section 10), a complaint (section 14) and the situations described in sections 09, 16, 17 and below.</p>
+<p><strong>Failed payment.</strong> If charging the fee for the next period fails, the payment operator will try again over the following days. During that time Premium keeps working. If the payment does not succeed, Premium ends and you return to Painless Free.</p>
+<p><strong>We do not delete anything when Premium ends.</strong> You return to Painless Free. Plans, entries and recordings above the Free limits are hidden, not deleted - they come back when you buy Premium again. They are permanently deleted only when you delete your account.</p>
+<p><strong>Deleting your account</strong> cancels the subscription immediately and ends Premium. We do not refund the unused part of the period (unless you withdraw from the contract within 14 days of purchase - section 10). If you only want to stop paying, cancelling the renewal is enough.</p>
+<p><strong>Features paused for safety reasons.</strong> If the assistant refers you to a doctor (section 03), the features related to exercise plans, summaries and the printout are paused until the situation is clarified. If you want to end Premium because of this, write to us - we will end the subscription and refund the amount for the unused full days of the current period.</p>
+<p><strong>A Premium pass</strong> ends by itself on the date shown in Settings - you do not pay anything and you do not need to cancel anything. After that you return to Painless Free under the rules described above (we do not delete anything). If you buy Premium during a pass, the subscription starts straight away, and the remaining days of the pass run alongside it and are not carried over. Deleting your account ends the pass.</p>
+</section>
+<section>
+<h2 id="s09"><span class="num">09</span>Price changes</h2>
+<p>The price of your subscription will not change without your consent. If we change the price of Premium, we will inform you by email and in the app at least 30 days before the end of the current billing period. The new price will apply only if you accept it in the app. If you do not accept it, the subscription will not be renewed and Premium will end at the end of the paid period.</p>
+</section>
+<section>
+<h2 id="s10"><span class="num">10</span>Right of withdrawal (consumers)</h2>
+<p><strong>You have 14 days to withdraw from the Painless Premium contract without giving a reason.</strong> The period runs from the day the contract is concluded, i.e. from the first purchase. An automatic renewal of the subscription does not start a new period.</p>
+<p><strong>How to withdraw.</strong> Before the period ends, send us a clear statement, e.g. by email to the address in section 01 or by letter to the address for service. You may use the model form in Annex 1, but you do not have to. It is enough that you send the statement before the 14 days have passed. We will promptly confirm receipt of the statement by email.</p>
+<p><strong>If you asked for Premium to start straight away</strong> (the checkbox before the purchase), you will pay for the time Premium was working until you withdrew. We calculate this proportionally:</p>
+<div class="note"><p>amount to pay = price × number of started days of use ÷ number of days in the billing period</p></div>
+<p>Example: quarterly plan (PLN 69, 92 days in the period), withdrawal on day 5: you pay 69 × 5 ÷ 92 = PLN 3.75, and we refund PLN 65.25.</p>
+<p><strong>If you did not ask for Premium to start straight away</strong>, or we did not inform you of this rule, we refund the full amount paid.</p>
+<p><strong>Refund.</strong> We refund the amount due without undue delay, and no later than 14 days after receiving the statement, using the same payment method you used - with no additional costs. When you withdraw, Premium ends and your account returns to Painless Free (without deleting data - section 08).</p>
+<p>A Premium pass is free of charge, so this section does not apply to it.</p>
+</section>
+<section>
+<h2 id="s11"><span class="num">11</span>Fair use of Premium</h2>
+<p>“No fixed limit” in Premium means use within a normal, personal scope. To protect the stability of the service and the running costs of the assistant, we apply an upper limit of <strong>200 messages a day and 2,000 messages in a calendar month</strong> - many times more than ordinary use requires. Once you reach it, you will see a message about a break until the next day or month. The limit does not interrupt a conversation about warning symptoms (section 06).</p>
+<p>Premium is intended for one person. Do not share your account with others or use it in an automated way. We can change the fair use limits only under the procedure in section 18, and never to your disadvantage during a paid period.</p>
+</section>
+<section>
+<h2 id="s12"><span class="num">12</span>Rules of use</h2>
+<p>By using Painless, you undertake that:</p>
+<ul>
+<li>you will not provide unlawful content - in particular content that is offensive, incites violence or infringes the rights of others;</li>
+<li>you will not impersonate another person or create an account using someone else's details;</li>
+<li>you will not try to disrupt the app, get around its security measures or download its content in an automated way;</li>
+<li>you will not use the app to give advice to other people or for commercial purposes;</li>
+<li>you understand that you follow the assistant's guidance at your own risk and that you will stop an exercise if it causes pain or discomfort.</li>
+</ul>
+<p>For your safety: do not enter in the conversation any data we do not need to know - your national identification number (PESEL), address, or other people's data. A description of what hurts is enough for us to give guidance.</p>
+</section>
+<section>
+<h2 id="s13"><span class="num">13</span>Technical requirements</h2>
+<p>To use Painless, all you need is a device with internet access, an up-to-date web browser with JavaScript enabled and an active email address. You can add the app to your phone's home screen - you do not need to install anything from an app store. Reminders require permission for notifications in your browser or phone. To open the printout, you need a PDF viewer (every modern phone and computer has one).</p>
+<p><strong>Risks.</strong> Using the internet involves the usual risks (e.g. malware, phishing attempts). We never ask for your sign-in code or card details by email. Anyone who receives the printout link for your physiotherapist can open it - send it only to someone you trust; you can switch it off in the app at any time.</p>
+</section>
+<section>
+<h2 id="s14"><span class="num">14</span>Complaints</h2>
+<p>If Painless (including Premium) does not work in accordance with the contract, or if something concerns you - write to the address in section 01 or send a letter to the address for service. Describe what the matter concerns and - if you can - what you expect. We will reply to the email address you wrote from <strong>within 14 days</strong> of receiving the complaint. If we do not reply within that time, the complaint is deemed to have been accepted.</p>
+<p>If the digital service does not conform to the contract, as a consumer you can demand that it be brought into conformity with the contract. If we do not do so within a reasonable time, or if the lack of conformity is significant, you can demand a price reduction or withdraw from the contract - under the rules of the Polish Consumer Rights Act (Chapter 5b).</p>
+<p><strong>Out-of-court dispute resolution.</strong> As a consumer, you can get help from a municipal or district consumer ombudsman (rzecznik konsumentów) and use mediation or the consumer arbitration court at the Voivodeship Inspectorate of Trade Inspection (Wojewódzki Inspektorat Inspekcji Handlowej). You can find information on the website of the Office of Competition and Consumer Protection (uokik.gov.pl). Using these options is voluntary.</p>
+</section>
+<section>
+<h2 id="s15"><span class="num">15</span>Liability</h2>
+<p>We do our best to make the guidance in the app reliable and safe, and the substantive rules the assistant follows are prepared by a physiotherapist. However, we cannot guarantee that an automatically generated answer will be accurate or suitable for your situation in every case - treat it as educational information, not as medical advice. We do not promise any specific results.</p>
+<p>We are liable for damage under the rules set out in the law. We do not limit or exclude liability to the extent the law does not allow it - in particular towards consumers, for damage caused intentionally and for personal injury. However, we are not liable for the consequences of providing untrue information about your health or of doing exercises against an explicit recommendation to contact a doctor.</p>
+</section>
+<section>
+<h2 id="s16"><span class="num">16</span>Availability and discontinuation</h2>
+<p>We make sure Painless works without interruptions, but there may be technical breaks or failures on the side of the service providers we use. We will announce planned longer breaks in the app. If, through our fault, Premium does not work for more than 3 days in a row, at your request we will extend the paid period by the length of the break or refund a proportional part of the price.</p>
+<p>We will notify you of a planned discontinuation of Painless at least 30 days in advance, so that you have time to save what is important to you. Paid Premium will work until the end of the period, and if the app is discontinued earlier, we will refund the amount for the unused days.</p>
+</section>
+<section>
+<h2 id="s17"><span class="num">17</span>Your personal data</h2>
+<p>Descriptions of your complaints, diary entries and plans are health data. We process them only on the basis of your explicit consent, given when you create your account. You can withdraw your consent at any time - without it, however, you cannot use the conversation with the assistant or the features based on it.</p>
+<p>If you have Premium and withdraw your consent to the processing of health data, you can end the Premium contract straight away - we will refund the amount for the unused full days of the current period.</p>
+<p>The details - what data we collect, who we entrust it to (including the payment operator), how long we keep it and what rights you have - are described in the <a href="https://bigjpainless.github.io/painless-polityka-prywatno-ci/privacy.html">Privacy Policy</a>, which forms part of these Terms.</p>
+</section>
+<section>
+<h2 id="s18"><span class="num">18</span>Changes to the Terms</h2>
+<p>We may change these Terms for important reasons: a change in the law or decisions of authorities, a change in the scope or way the app's features work, the introduction of new features, a change of service providers or the payment operator, the need to ensure users' safety, or a change in the service provider's details.</p>
+<p>We will inform you of every change by email and with a message in the app <strong>at least 14 days</strong> before it takes effect (changes that benefit you and changes required by law may take effect sooner). If you do not agree to the new version:</p>
+<ul>
+<li>in Painless Free, you can delete your account before the day it takes effect - without any consequences;</li>
+<li>in Painless Premium, you can end the Premium contract before the day it takes effect - we will refund the amount for the unused full days of the current period.</li>
+</ul>
+<p>Changes do not affect the price of a paid period; price changes are described in section 09.</p>
+</section>
+<section>
+<h2 id="s19"><span class="num">19</span>Final provisions</h2>
+<p>These Terms are available on this page in a form that allows you to download, save and print them. We make them available before you create an account and before you buy Premium, and after the purchase we send them to you by email. We will provide earlier versions on request.</p>
+<p>Matters not regulated here are governed by Polish law, in particular the Civil Code, the Act on Providing Services by Electronic Means and - if you are a consumer - the Consumer Rights Act. These Terms do not limit the rights you have under mandatory provisions of law. Disputes are resolved by the courts having jurisdiction under general rules.</p>
+<p>If any provision of these Terms turns out to be invalid, the remaining provisions remain in force.</p>
+</section>
+<section>
+<h2 id="z19">Annex 1 Model withdrawal form</h2>
+<p>(complete and return this form only if you wish to withdraw from the contract)</p>
+<div class="note"><p><strong>To:</strong> Jędrzej Wąsik Fizjoterapia, ul. Karola Szymanowskiego 23/3, 43-200 Pszczyna, Poland, email: <a href="mailto:movepainless@gmail.com">movepainless@gmail.com</a></p>
+<p>I hereby give notice that I withdraw from my contract for the supply of the digital service Painless Premium.</p>
+<ul>
+<li>Date the contract was concluded (date of purchase): ..................................</li>
+<li>Name of consumer: ..................................</li>
+<li>Email address of the Painless account: ..................................</li>
+<li>Address of consumer: ..................................</li>
+<li>Signature of consumer (only if this form is notified on paper): ..................................</li>
+<li>Date: ..................................</li>
+</ul></div>
+</section>
+<section>
+<h2 id="polecenia">Annex 2 Referral programme</h2>
+<p>The referral programme is voluntary and free of charge. It is run by the service provider named in section 01. The terms used in this annex are explained in section 02.</p>
+
+<p><strong>1. Who can refer.</strong> Every signed-in user whose consents are up to date. You can find your link and code in Settings → “Recommend to a friend”. You send the link yourself, to whoever you want - we do not send any messages to your friend and we do not collect their contact details. Send it only to people you know who are happy to receive it.</p>
+
+<p><strong>2. Who can join.</strong> An adult (section 04) who:</p>
+<ul>
+<li>creates a new account from a referral link or enters a referral code in Settings <strong>within 7 days of creating the account</strong>;</li>
+<li>has an account with an email address (an account without an email address must add one first, still within those 7 days).</li>
+</ul>
+<p>A referral can be used only once. You cannot refer yourself.</p>
+
+<p><strong>3. What the friend gets.</strong> A 7-day Premium pass, straight after accepting the consents (or after entering the code).</p>
+
+<p><strong>4. What the referrer gets.</strong> A 14-day Premium pass for each active friend. An <strong>active friend</strong> is one who, within 14 days of joining, created their first exercise plan in the conversation and saved a diary entry on a day other than the day the plan was created. We count days according to Polish time. We grant the reward automatically, usually on the same or the following day, and if you have notifications turned on, we let you know with a notification.</p>
+<ul>
+<li>At most <strong>3 rewards, i.e. 42 days</strong>, per account. You can keep referring, but further rewards are not granted.</li>
+<li>Days add up: the next pass starts after the previous one ends.</li>
+</ul>
+<p><strong>4a. If you pay for Premium.</strong> If, when a reward is granted (to the referrer or to the friend), you have a renewing, paid Premium subscription, instead of a pass we move your next payment by the same number of days. Until the new payment date you have Premium free of charge, the price does not change, and you can see the date in Settings. If the subscription is cancelled or the last payment failed, you get a pass that starts after the end of the paid period. Moving the payment counts towards the limit of 3 rewards.</p>
+
+<p><strong>5. Rules of the pass.</strong> The pass is free of charge, does not require a card and does not renew. After it ends, the account returns to Painless Free (section 08). The pass cannot be exchanged for money or other benefits, or transferred to another account. The Painless team may also grant a pass outside the referral programme - the same rules then apply. Deleting the friend's account does not take the reward away from the referrer.</p>
+
+<p><strong>6. Abuse.</strong> It is not allowed to create fake accounts, accounts using someone else's details or additional accounts of your own in order to obtain rewards, or to send the link in a way that is unlawful or misleading (e.g. by promising more than this annex gives). In such a case, we may not grant the reward or may withdraw a pass obtained in this way, and in the case of a serious breach proceed under section 05. We will inform you of this by email with the reasons. You can make a complaint (section 14).</p>
+
+<p><strong>7. Changes to or end of the programme.</strong> We may change or end the programme by announcing it in the app at least 14 days in advance. Passes already granted remain valid until they end, and friends who joined earlier are settled under the previous rules.</p>
+
+<p><strong>8. Privacy.</strong> The referrer sees only numbers: how many people joined, how many are active and how many rewards they have earned - without names or email addresses. With a small number of referrals, however, they may guess who joined and met the conditions. The details are described in the Privacy Policy.</p>
+</section>
+</main>
+
+<footer class="wrap">
+  <span>Painless — Terms of Service, version 2.1</span>
+  <span>movepainless@gmail.com</span>
+</footer>
+
+</body>
+</html>
