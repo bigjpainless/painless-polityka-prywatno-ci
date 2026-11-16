@@ -8,6 +8,23 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Inter:wght@400;600&family=Space+Mono&display=swap" rel="stylesheet">
+<script>
+(function(){try{
+  var q=new URLSearchParams(location.search).get('lang'),s=null;
+  try{s=localStorage.getItem('painless_doc_lang')}catch(e){}
+  if(q==='pl'){try{localStorage.setItem('painless_doc_lang','pl')}catch(e){}return}
+  if(q!=='en'&&s!=='en'){
+    if(s==='pl')return;
+    var l=(navigator.languages&&navigator.languages.length)?navigator.languages:[navigator.language||''];
+    var k=0;for(var i=0;i<l.length;i++){var c=String(l[i]||'').toLowerCase().split('-')[0];if(!c)continue;k++;if(c==='pl')return;if(c==='en')break}
+    if(!k)return;
+  }
+  location.replace('privacy.html'+location.hash);
+}catch(e){}})();
+</script>
+<link rel="alternate" hreflang="pl" href="https://bigjpainless.github.io/painless-polityka-prywatno-ci/">
+<link rel="alternate" hreflang="en" href="https://bigjpainless.github.io/painless-polityka-prywatno-ci/privacy.html">
+<link rel="alternate" hreflang="x-default" href="https://bigjpainless.github.io/painless-polityka-prywatno-ci/privacy.html">
 <style>
   :root{
     --green:#4CAF1E;
@@ -133,6 +150,10 @@
   .note p+p{margin-top:8px}
   .note ul{margin-top:8px}
   @media(max-width:540px){.tw th,.tw td{padding:8px 7px;font-size:.8rem;hyphens:auto}.tw table{font-size:.8rem}}
+  .lang{margin-left:auto;font-family:var(--mono);font-size:.78rem;color:var(--green-dark);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:6px 12px;background:var(--card);white-space:nowrap}
+  .lang:hover,.lang:focus-visible{border-color:var(--green)}
+  .hero .note{margin-top:14px}
+  @media print{.lang{display:none}}
 </style>
 </head>
 <body>
@@ -147,6 +168,7 @@
       <div class="brand-name">Painless</div>
       <div class="brand-sub">bepainless.pl</div>
     </div>
+    <a class="lang" href="privacy.html?lang=en" hreflang="en" lang="en">English</a>
   </div>
 </header>
 
@@ -154,8 +176,8 @@
   <div class="hero">
     <h1>Polityka prywatności</h1>
     <div class="meta">
-      <span>wersja: <b>3.1</b></span>
-      <span>obowiązuje od: <b>12.11.2026</b></span>
+      <span>wersja: <b>3.2</b></span>
+      <span>obowiązuje od: <b>16.11.2026</b></span>
       <span>dotyczy: <b>aplikacji Painless</b></span>
     </div>
     <p class="lead">Painless to aplikacja, w której rozmawiasz z asystentem AI o dolegliwościach bólowych, prowadzisz dziennik i ćwiczysz według planu. Opisy dolegliwości, wpisy w dzienniku i plany to dane dotyczące zdrowia - traktujemy je z najwyższą ostrożnością. Ta polityka wyjaśnia prostym językiem: jakie dane zbieramy, po co, komu je powierzamy, jak długo je trzymamy i jak możesz je w każdej chwili usunąć.</p>
@@ -286,6 +308,7 @@
 <tr class="even">
 <td>Założenie i obsługa konta, logowanie, przypomnienia, Painless Free</td>
 <td>wykonanie umowy (art. 6 ust. 1 lit. b RODO)</td>
+</tr>
 <tr class="even">
 <td>Program poleceń: powiązanie kont, przepustki Premium, liczniki na ekranie poleceń</td>
 <td>wykonanie umowy - zasady programu w Regulaminie (art. 6 ust. 1 lit. b RODO)</td>
@@ -378,6 +401,7 @@
 </table></div>
 <p><strong>Stripe</strong> w części działa jako nasz podmiot przetwarzający (obsługa płatności), a w części jako odrębny administrator - np. przy weryfikacji płatności, przeciwdziałaniu oszustwom i wykonywaniu własnych obowiązków prawnych instytucji płatniczej. Zasady Stripe: stripe.com/pl/privacy.</p>
 <p><strong>Usługi powiadomień:</strong> jeśli włączysz przypomnienia, powiadomienia dostarcza usługa powiadomień Twojej przeglądarki lub systemu (np. Apple, Google, Mozilla). Przekazujemy jej wyłącznie zaszyfrowaną, neutralną treść powiadomienia.</p>
+<p><strong>YouTube:</strong> żeby pokazać Ci filmy do ćwiczeń z planu (w Premium), korzystamy z usług YouTube API Services. Do YouTube wysyłamy wyłącznie nazwę ćwiczenia (np. „bird dog”) - bez Twojego imienia, adresu e-mail, identyfikatora konta i innych danych o Tobie. YouTube nie ma dostępu do Twojego konta Google ani YouTube. Gdy klikniesz film, otwiera się on w YouTube i od tej chwili Google przetwarza Twoje dane na własnych zasadach, opisanych w <a href="https://policies.google.com/privacy">Polityce prywatności Google</a>.</p>
 <p><strong>Osoba, która poleciła Ci Painless,</strong> nie dostaje żadnych Twoich danych poza tym, że jej liczniki („dołączyli”, „aktywni”, „nagrody”) wzrosną (sekcja 03).</p>
 <p><strong>Fizjoterapeuta, któremu wyślesz link do wydruku,</strong> otrzymuje dane z wydruku, bo Ty mu je przekazujesz. Od momentu pobrania pliku sam odpowiada za te dane.</p>
 </section>
@@ -508,7 +532,7 @@
 </main>
 
 <footer class="wrap">
-  <span>Painless — polityka prywatności, wersja 3.1</span>
+  <span>Painless — polityka prywatności, wersja 3.2</span>
   <span>movepainless@gmail.com</span>
 </footer>
 
