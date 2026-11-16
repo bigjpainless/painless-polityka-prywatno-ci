@@ -8,6 +8,23 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Inter:wght@400;600&family=Space+Mono&display=swap" rel="stylesheet">
+<script>
+(function(){try{
+  var q=new URLSearchParams(location.search).get('lang'),s=null;
+  try{s=localStorage.getItem('painless_doc_lang')}catch(e){}
+  if(q==='pl'){try{localStorage.setItem('painless_doc_lang','pl')}catch(e){}return}
+  if(q!=='en'&&s!=='en'){
+    if(s==='pl')return;
+    var l=(navigator.languages&&navigator.languages.length)?navigator.languages:[navigator.language||''];
+    var k=0;for(var i=0;i<l.length;i++){var c=String(l[i]||'').toLowerCase().split('-')[0];if(!c)continue;k++;if(c==='pl')return;if(c==='en')break}
+    if(!k)return;
+  }
+  location.replace('terms.html'+location.hash);
+}catch(e){}})();
+</script>
+<link rel="alternate" hreflang="pl" href="https://bigjpainless.github.io/painless-polityka-prywatno-ci/regulamin.html">
+<link rel="alternate" hreflang="en" href="https://bigjpainless.github.io/painless-polityka-prywatno-ci/terms.html">
+<link rel="alternate" hreflang="x-default" href="https://bigjpainless.github.io/painless-polityka-prywatno-ci/terms.html">
 <style>
   :root{
     --green:#4CAF1E;
@@ -133,6 +150,10 @@
   .note p+p{margin-top:8px}
   .note ul{margin-top:8px}
   @media(max-width:540px){.tw th,.tw td{padding:8px 7px;font-size:.8rem;hyphens:auto}.tw table{font-size:.8rem}}
+  .lang{margin-left:auto;font-family:var(--mono);font-size:.78rem;color:var(--green-dark);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:6px 12px;background:var(--card);white-space:nowrap}
+  .lang:hover,.lang:focus-visible{border-color:var(--green)}
+  .hero .note{margin-top:14px}
+  @media print{.lang{display:none}}
 </style>
 </head>
 <body>
@@ -147,6 +168,7 @@
       <div class="brand-name">Painless</div>
       <div class="brand-sub">bepainless.pl</div>
     </div>
+    <a class="lang" href="terms.html?lang=en" hreflang="en" lang="en">English</a>
   </div>
 </header>
 
@@ -154,7 +176,7 @@
   <div class="hero">
     <h1>Regulamin</h1>
     <div class="meta">
-      <span>wersja: <b>2.0</b></span>
+      <span>wersja: <b>2.1</b></span>
       <span>obowiązuje od: <b>12.11.2026</b></span>
       <span>dotyczy: <b>aplikacji Painless</b></span>
     </div>
@@ -464,6 +486,7 @@
 <ul>
 <li>Najwyżej <strong>3 nagrody, czyli 42 dni</strong>, na jedno konto. Możesz polecać dalej, ale kolejne nagrody nie przysługują.</li>
 <li>Dni się sumują: kolejna przepustka zaczyna się po końcu poprzedniej.</li>
+</ul>
 <p><strong>4a. Gdy płacisz za Premium.</strong> Jeśli w chwili przyznania nagrody (polecającemu albo znajomemu) masz odnawianą, opłaconą subskrypcję Premium, zamiast przepustki przesuwamy Twoją najbliższą płatność o tę samą liczbę dni. Do nowej daty płatności masz Premium bez opłat, cena się nie zmienia, a datę widzisz w Ustawieniach. Jeśli subskrypcja jest anulowana albo ostatnia płatność się nie powiodła, dostajesz przepustkę, która zaczyna się po końcu opłaconego okresu. Przesunięcie płatności liczy się do limitu 3 nagród.</p>
 
 <p><strong>5. Zasady przepustki.</strong> Przepustka jest bezpłatna, nie wymaga karty i nie odnawia się. Po jej końcu konto wraca do Painless Free (sekcja 08). Przepustki nie można wymienić na pieniądze ani inne korzyści ani przenieść na inne konto. Przepustkę może też przyznać zespół Painless poza programem poleceń - obowiązują wtedy te same zasady. Usunięcie konta znajomego nie odbiera nagrody polecającemu.</p>
